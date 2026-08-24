@@ -14,6 +14,23 @@ and this file is the resolution.
 | **Æsc** | Terminal daemon |
 | **Æyre** | Voice layer / vision — STT and TTS |
 
+## URL and repo names
+
+Anything that becomes a URL, a repo, a package, or a path uses the **lowercase
+single-letter form** — `Æ` becomes `ae`.
+
+| Canon | URL / repo |
+|---|---|
+| NovÆcorpus | `novae-corpus` |
+| NovÆxenti | `novaexenti` |
+| NovÆcopia | `novaecopia` |
+| Æsop-Xi | `aesop-xi` |
+| Horizons-Ui | `horizons-ui` |
+| Æsc | `aesc` |
+| Æyre | `aeyre` |
+
+Display names keep the ligature. Only the machine-readable form flattens it.
+
 ## Superseded spellings
 
 Found across the corpus and in existing repos. Preserve them where they appear
