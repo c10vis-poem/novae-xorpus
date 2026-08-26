@@ -306,16 +306,16 @@ waiting — it is never a reason to stall.
 
 | | |
 |---|---|
-| `01-sources/` | **91 sources** across 14 directories (+ 5 `MANIFEST*` bookkeeping files) |
-| `02-clean/` | **90 files**, produced by `tools/clean.py` |
+| `01-sources/` | **93 sources** across 14 directories (+ 5 `MANIFEST*` bookkeeping files) |
+| `02-clean/` | **92 files**, produced by `tools/clean.py` |
 | `03-check/` | empty — the RLVR pass has not been run |
 
-Loss check on the 91: 76 zero-loss, 14 losing only verified furniture, 0
+Loss check on the 93: 78 zero-loss, 14 losing only verified furniture, 0
 unexplained. One source skipped (`technical-builder-style.skill.zip` — a zip
-has no text to extract); it stays in `01-sources` as a source. 90 + 1 skip = 91.
+has no text to extract); it stays in `01-sources` as a source. 92 + 1 skip = 93.
 
 Counts are **sources only**. The five `MANIFEST*` files in `01-sources/` are
-bookkeeping, not sources, and are excluded — a raw file count returns 96.
+bookkeeping, not sources, and are excluded — a raw file count returns 98.
 
 **Nothing self-certifies.** That loss check was run by the same script that did
 the conversion, so it does not count as the check. `03-check/` still needs an
