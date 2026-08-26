@@ -419,6 +419,20 @@ visual formatting the operator added for their own readability.
 nothing deleted. It is superseded, not removed. Where the two disagree,
 `Copy of NovÆcopia~` wins.
 
-**Caveat the operator raised:** the visual formatting may not survive into
-whatever an agent consumes. It was retrieved as a text extract, so the
-styling is already gone — the wording is intact, the presentation is not.
+**On the visual formatting** — the operator deliberately laid this document
+out to be readable at a glance, and asked whether that carries over. Checked
+against the retrieved extract:
+
+**Survived:** heading levels, bold, italic, bold-italic, bullet and numbered
+lists, the layered chapter structure. The document still reads as structured
+markdown, and an agent parses it fine.
+
+**Lost:** centering, font choices, sizing, colour, and the deliberate
+whitespace/spacing. The title block and the trademark/tagline placement —
+which carried real visual intent — are flattened.
+
+So the *information architecture* survived and the *presentation* did not.
+Nothing needs re-retrieving for content. If the visual layout itself matters
+as a design reference (as it does for the annotated architecture document —
+see README → "The shape of the output"), the operator should keep the Drive
+original as the canonical visual, since no text extract will preserve it.

@@ -333,6 +333,22 @@ decision.
 - **Honey for Devs**
 - **Pocock Skills**
 
+**The working inventory to route through the corpus process.** This is the
+operator completing a thought that was cut off mid-sentence in the annotated
+architecture document — the list of assets that must get the same
+skill-and-tool extraction treatment as the technical docs:
+
+**ECC** · **Honey for Devs** · **Pocock Skills** · **Prime Agent** ·
+**code review graph** · **reverse skills** · **Obsidian skills** ·
+**notebooklm-py** · **Graphify skills** · **OpenAI** · **GSD** · **mem0** ·
+**OB1** · **Omni Route** · **Claude Video** · **Node.js** · **Crawl4AI** ·
+**Perplexity web search substitution** — and more.
+
+Not an exhaustive list and not a ranking. The point is that **these repos and
+skill packages are themselves source material**, not just dependencies to
+install. They get extracted for tools and skills the same way a Qualcomm SDK
+manual does.
+
 **Assignments the operator considers likely:**
 
 | Consumer | Tools |
@@ -340,7 +356,7 @@ decision.
 | The three-APK setup | **OpenAI + Node.js + Omni Route** — operator: *"pretty sure this is going to work well"* |
 | On-device open-weight models | **Prime Agent**; possibly **Qwen CLI** if the Qwen models end up driving it (unconfirmed) |
 | Claude-based agents | **ECC** |
-| Data-scraping / web-search agent | **Perplexity web search substitution**, plus an open-source Firecrawl equivalent — operator could not recall the name; **Crawl4AI** is the likeliest candidate, confirm before committing |
+| Data-scraping / web-search agent | **Perplexity web search substitution** + **Crawl4AI** (the open-source Firecrawl equivalent — confirmed by operator 2026-08-26) |
 | Auditing and **KAG** | **Graphify** + **notebooklm-py** |
 | Specific agents (TBD which) | **Claude Video**, **reverse skills** |
 | Multi-agent swarms | Ringer, CrewAI, and the other swarm tools |
