@@ -266,6 +266,91 @@ guide agents, manage how they operate, and monitor use of the Data Bank. Works
 in conjunction with openwiki for file management, and implements the KAG and
 RLVR audits and script training for assigned agents.
 
+### Tools, not just skills
+
+Operator-stated 2026-08-26. This corrects a bias in how items 1–3 were written.
+
+Extracting **skills** from the source documents is only half the job, and
+probably the smaller half. Most of these documents explain **parameters,
+guidelines, and pathways** — not actions, functions, or specific executions.
+A document describing how QAIRT routes a model to the Hexagon NPU is not a
+skill; it is the spec for a *tool*.
+
+Expect **at least as many tools extracted as skills, likely more.** A plan
+that only produces a skill library has read these documents wrong.
+
+### The shape of the output
+
+Operator-stated 2026-08-26. Items 1–8 say what the grill session must decide.
+This says what the deliverable must *look like*.
+
+The format template is
+[`01-sources/architecture-edits/EDIT-Clarifying Clean Text…`](01-sources/architecture-edits/) —
+an earlier architecture document the operator annotated by hand. **Its layout
+is the target.** Numbered file-by-file blocks, each with an explicit
+destination path, a stated operational mandate, ASCII topology diagrams for
+dataflow, and inline JSON schemas where a contract is being defined. It was
+written to be readable by a human at a glance and still precise enough for an
+agent to execute against.
+
+Two warnings about that document:
+
+1. **The content is out of date.** It predates the three-APK architecture and
+   most of the tool inventory. The operator's own annotation: *"this is
+   written way before the 3 APK architecture and additional tools are added
+   so this is way out of date but still correct thinking process."* Copy the
+   structure, not the claims.
+2. **It is full of blanks.** Sections marked well-written are also marked
+   *"missing numerous key aspects."* Treat it as a skeleton to fill, not a
+   draft to edit.
+
+The operator's annotations on that document are a standing punch list:
+
+| Where | What has to change |
+|---|---|
+| Priority 4 vs 5 | **Swapped.** They run **parallel** — the three-APK architecture and on-device agents come forward, alongside runtime validation. |
+| Priority 1 | Unsloth is optional. Higher priority: Google's app builders and the agent platform (formerly Vertex AI), plus the full tool/harness inventory below. |
+| Priority 3 | This is the **first main goal of the grill session** — repo structure, folders, file structure, content, *and* roadmapping the agent build across every harness and tool: what gets used, how, when, where, why, and by whom. |
+| Priority 6 | Not just Horizons + red auditor. Also on-device inference (query/executor), home-node housekeeping / cross-agent auditor / log compiler / script editor agent, help desk agent, web search agent, openwiki file management, and the on-device NPU/inference manager. |
+| Repo list, items 4–6 | `horizons-ui-v1.2`, `nova-claw-runtime`, `aesop-xi-protocol` — all three need a massive overhaul. |
+| Repo list, item 3 | `termux-building-skills` scope expands far beyond Termux, to **all device agent setups**. |
+| Repo list, item 8 | The headless-node repos matter less than **the four agents** (red auditor plus three others) and **one to two separate apps**. |
+| Skill-building protocol (File 5) | Operator: *"this is exactly what I want to happen… benefits would be profound."* The JSON schema approach is right; the code needs replacing. |
+| File verifier (File 6) | Good foundation, needs filling in. Same format should extend to the **multi-agent cross-auditing setup for the home node**. |
+| Audit schema (File 7) | Must expand to cover the Google-platform agents and the **four to six on-device agents**. |
+| Final build block | The directory tree is **not** run by hand in Termux. The grill agent executes it — that agent is the **traffic director** managing development of the architectural framework. |
+
+### Tool and asset assignment
+
+Operator-stated 2026-08-26. Assignment is **per-agent**, not global — the same
+tool serves different agents differently, and much of this is explicitly
+trial-and-error. What follows is the operator's current read, not a locked
+decision.
+
+**Critical first, ahead of everything else:**
+
+- **ECC**
+- **Honey for Devs**
+- **Pocock Skills**
+
+**Assignments the operator considers likely:**
+
+| Consumer | Tools |
+|---|---|
+| The three-APK setup | **OpenAI + Node.js + Omni Route** — operator: *"pretty sure this is going to work well"* |
+| On-device open-weight models | **Prime Agent**; possibly **Qwen CLI** if the Qwen models end up driving it (unconfirmed) |
+| Claude-based agents | **ECC** |
+| Data-scraping / web-search agent | **Perplexity web search substitution**, plus an open-source Firecrawl equivalent — operator could not recall the name; **Crawl4AI** is the likeliest candidate, confirm before committing |
+| Auditing and **KAG** | **Graphify** + **notebooklm-py** |
+| Specific agents (TBD which) | **Claude Video**, **reverse skills** |
+| Multi-agent swarms | Ringer, CrewAI, and the other swarm tools |
+| Universal memory bank | A whole litany of tools and assets — mem0, OB1, Reasoning Bank, openwiki, and more, to be enumerated |
+
+**How to treat this list:** some of it is already tried and true, much of it is
+untested. The grill session's job is not to pick winners on paper — it is to
+state, per agent, what gets used and what still needs a trial. An assignment
+with no stated reason is a guess and must be labelled one.
+
 ### Wiring this repo still needs
 
 Not blockers on the grill session, but required for the ecosystem to work:

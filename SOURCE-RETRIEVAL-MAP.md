@@ -404,3 +404,21 @@ original and fails hard rule 1 for `01-sources/`.
    path that preserves bytes.
 3. Retrieve these 11 by some other route entirely — device-side download,
    or a tool that writes to disk without passing bytes through the model.
+
+## Operator decision — `NovÆcopia` — 2026-08-26
+
+Two documents exist and both are in the corpus. **Use `Copy of NovÆcopia~`**
+(Drive `1xsuEOhOyXbavAq80hR5vn1zUPc1XEGv-GFFyA7Dg05w`, in
+`ReadMe*/.ReadMe/`, retrieved to `01-sources/novaexopia-vincet/`).
+
+Operator-stated: it is the **updated and upgraded** version. *"It doesn't have
+any less information in it, it only has more."* It also carries deliberate
+visual formatting the operator added for their own readability.
+
+`NovÆcopia Vincet.txt` stays in the corpus — hard rule 2, nothing merged,
+nothing deleted. It is superseded, not removed. Where the two disagree,
+`Copy of NovÆcopia~` wins.
+
+**Caveat the operator raised:** the visual formatting may not survive into
+whatever an agent consumes. It was retrieved as a text extract, so the
+styling is already gone — the wording is intact, the presentation is not.
