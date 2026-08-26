@@ -1,4 +1,4 @@
-# NovÆcorpus — the router
+# NovÆxorpus — the router
 
 This file is the router. Tools, tool calling, skill loading, and the contexts
 that go with them. **It is not the wiki.** No daily updates, no session notes,
@@ -12,7 +12,7 @@ Read `README.md` before doing anything.
 
 ## Naming
 
-`NAMING-CANON.md` is authoritative. NovÆcorpus · NovÆxenti · NovÆcopia ·
+`NAMING-CANON.md` is authoritative. NovÆxorpus · NovÆxenti · NovÆxopia ·
 Æsop-Xi · Horizons-Ui · Æsc · Æyre. Source documents keep their original
 spellings — never rewrite a source to match the canon.
 

@@ -6,9 +6,9 @@ and this file is the resolution.
 
 | Name | What it is |
 |---|---|
-| **NovÆcorpus** | The vault repo / universal Data Bank |
+| **NovÆxorpus** | The vault repo / universal Data Bank |
 | **NovÆxenti** | Agent logic |
-| **NovÆcopia** | Agent tools, harness, engine — the "claw" aspect |
+| **NovÆxopia** | Agent tools, harness, engine — the "claw" aspect |
 | **Æsop-Xi** | Memory layer, context formatting, tool and context orchestration, and protocols — ethical operations and agent protocols |
 | **Horizons-Ui** | The UI |
 | **Æsc** | Terminal daemon |
@@ -21,15 +21,26 @@ single-letter form** — `Æ` becomes `ae`.
 
 | Canon | URL / repo |
 |---|---|
-| NovÆcorpus | `novae-corpus` |
+| NovÆxorpus | `novae-xorpus` |
 | NovÆxenti | `novaexenti` |
-| NovÆcopia | `novaecopia` |
+| NovÆxopia | `novaexopia` |
 | Æsop-Xi | `aesop-xi` |
 | Horizons-Ui | `horizons-ui` |
 | Æsc | `aesc` |
 | Æyre | `aeyre` |
 
 Display names keep the ligature. Only the machine-readable form flattens it.
+
+## Why `x`, and why the one hyphen
+
+Operator-stated, 2026-08-26. In the ligature form the **`x` carries the hard `k`
+sound** — `NovÆxorpus`, `NovÆxopia` — and it stays findable there. Flattened to
+two separated words the `c` reads as a `z` instead, which is what the `x` fixes.
+
+The vault repo **keeps its hyphen**: `novae-xorpus`. This is deliberate and is
+not an inconsistency to be tidied away. The others run together —
+`novaexenti`, `novaexopia` — and `aesop-xi` keeps the hyphen its display name
+already has.
 
 ## Superseded spellings
 
@@ -38,9 +49,9 @@ in a source; do not use them going forward.
 
 | Found as | Canon |
 |---|---|
-| `NovA-Corpus`, `NovA-Corpus`, `Nova Corpus`, `NÆX` | **NovÆcorpus** |
+| `NovA-Corpus`, `Nova Corpus`, `NÆX`, `NovÆcorpus` | **NovÆxorpus** |
 | `NovÆgenti`, `Novus Agenti`, `NovusÆxenti`, `Novæ-Corpus` | **NovÆxenti** |
-| `NovÆcopia Vincet`, `Omni Claw`, `OMNI.CLAW` | **NovÆcopia** |
+| `NovÆcopia Vincet`, `Omni Claw`, `OMNI.CLAW`, `NovÆcopia` | **NovÆxopia** |
 | `AESOP XI`, `AESOP_XI`, `aesop`, `Agentic Executions Split Operations Protocol` | **Æsop-Xi** |
 | `Horizons UI`, `horizons-ui`, `com.horizons.ui` | **Horizons-Ui** |
 | `Æsh`, `daemon.aexenti` | **Æsc** |

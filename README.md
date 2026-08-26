@@ -49,7 +49,7 @@ complete and unaltered. `grill-with-docs` is marked
 Everything lives in the Obsidian vault, and the vault is the repo. Same tree —
 edited in Obsidian, tracked by git, pushed to main.
 
-**This repo is the vault.** Operator-stated 2026-08-26: NovÆcorpus is a
+**This repo is the vault.** Operator-stated 2026-08-26: NovÆxorpus is a
 **replacement, not a sibling**. It is the universal memory layer and Data Bank,
 and the home of the living `wiki.md` (the llm-wiki).
 
@@ -60,7 +60,7 @@ Three legacy Obsidian vaults still exist alongside it on the device:
 ├── .OBSIDIAN/           has .obsidian/  → legacy vault
 ├── OBSIDIAN-WIKI.md/    has .obsidian/  → legacy vault
 ├── OBSIDIAN_VAULT.md/   has .obsidian/  → legacy vault
-└── novae-corpus/        has .git/       → THIS REPO — the vault
+└── novae-xorpus/        has .git/       → THIS REPO — the vault
 ```
 
 None of the three has ever synced, which is why three handoffs written in August
@@ -186,7 +186,7 @@ Operator-stated, 2026-08-26. This is the mandate for the `grill-with-docs`
 session. The agent running that session takes the data in this repo and produces
 all of the following.
 
-**NovÆcorpus is a replacement, not a sibling.** This repo *is* the vault — the
+**NovÆxorpus is a replacement, not a sibling.** This repo *is* the vault — the
 universal memory layer and Data Bank, and the home of the living `wiki.md`
 (the llm-wiki). The other Obsidian vaults on the device are legacy and are
 resolved by steps 1–2 below.
@@ -219,7 +219,7 @@ that project starts with the building blocks it needs.
 
 **Projects lined up, and repos that may need building:**
 
-- **NovÆcorpus** — this repo.
+- **NovÆxorpus** — this repo.
 - **Horizons-Ui**, plus the two adjacent access daemons (**Æsc**, **Æyre**).
   All three APKs run independently of each other, so three separate repos is
   probably the more efficient structure.
@@ -252,7 +252,7 @@ The actual agent logic, models, tools, and skills making up the dual-agent
 query/executor model that acts as the main on-device assistant, using
 Horizons-Ui and the accessibility daemons.
 
-### 7. NovÆcopia
+### 7. NovÆxopia
 
 The claw aspect of the agent: tools, webhooks, on-device accessibility engines,
 the runtime, PC/MCP servers, and IDE access. **Open question:** whether this can
