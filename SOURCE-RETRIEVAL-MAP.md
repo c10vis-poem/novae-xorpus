@@ -332,14 +332,22 @@ a fresh session enumerated it with no refusal. **11 files + 3 subfolders.**
 already in the corpus proper. A device-wide search (2026-08-26, on request)
 found one more of the 11 already sitting on device outside the corpus:
 `both.docx`, byte-identical, now retrieved and cleaned — see the row above.
-That search also turned up two near-misses that are **not** the same file and
-were left alone: `URL's.docx` (10,500B) + `MEMORY LAYER .docx` (19,439B), two
-separate documents whose names echo Drive's combined
-`URL's-MEMORY LAYER .docx` (20,651B) but whose sizes don't match — likely
-earlier drafts, not duplicates. And a `.md` titled `1. Well I need to plan...`
-matches Drive's Doc of the same name by title only; it's already a converted
-copy, not a verbatim original, so it doesn't satisfy hard rule 1 and wasn't
-used.
+That search also turned up two on-device files whose names echo Drive titles.
+Both were read in full, not just size-compared, before being ruled out:
+
+- `URL's.docx` (10,500B) + `MEMORY LAYER .docx` (19,439B) are **not drafts of
+  Drive's `URL's-MEMORY LAYER .docx` (20,651B) — they're fragments of it.**
+  Read all three: the Drive file contains the entire text of both on-device
+  files verbatim, plus several more chat turns (Termux, GLM-5.2 over
+  OpenRouter, the llm-wiki compiler) that exist nowhere on this device. The
+  on-device copies are partial, not alternate versions, so the full Drive file
+  is still needed and neither on-device file substitutes for it.
+- A `.md` titled `1. Well I need to plan...` was read against Drive's Doc of
+  the same name — content is word-for-word identical, confirmed, not just a
+  title match. It's already here as a converted copy; no raw docx/original
+  twin exists anywhere on device (checked). Still fails hard rule 1 for
+  `01-sources/` because it's a conversion, not an untouched original — so it
+  wasn't used, but the reason is now verified by content, not assumed by size.
 
 **10 files remain to retrieve from Drive**, none found anywhere else on
 device: `URL's-MEMORY LAYER .docx`, `agent_panel.sh.docx`,
