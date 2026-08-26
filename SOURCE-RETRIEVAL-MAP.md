@@ -286,3 +286,72 @@ Everything except item 12 is reachable read-only through Drive right now.
 Three of the on-device originals sit in Android's trash and auto-purge
 **2026-09-17** — copies exist elsewhere, so nothing is lost, but they'll vanish
 from Downloads.
+
+## Item 16 · `Universal_Memory_` — enumerated 2026-08-26 (unblocked)
+
+Parent `1YVgHK7psWYaEnuVvDtEIuctm6-uMWNUF`. The 2026-08-26 handoff recorded this
+as BLOCKED by a safety check and said to run it from a fresh session. Done —
+a fresh session enumerated it with no refusal. **11 files + 3 subfolders.**
+
+### Root — 11 files
+
+| Title | Bytes | Type | id | Status |
+|---|---|---|---|---|
+| `XContinual_Harnessl.txt` | 87,155 | txt | `1i_8HWl5HNfDE6UZ4w35PBZCU0MFtk92x` | **DUP** — on disk at 87,158 (3-byte BOM, known) |
+| `Continual harness online adaptation for self-improving foundation agents` | 31,628 | Doc | `1GUhHGOkfhhlYddpwhm_1wJomxhdACH5pbPn9fAOfXaY` | **DUP** — `continual-harness/…(Google Doc export).txt` |
+| `URL's-MEMORY LAYER .docx` | 20,651 | docx | `1_npa36CkEZb8pyuQpuHRWPw-rSTZV1Tl` | new |
+| `agent_panel.sh.docx` | 9,542 | docx | `1QIhJDEi6UJ6811nLw2vKlN2mqCe_F0Ib` | new |
+| `both.docx` | 9,384 | docx | `1LCWTMuQU4bahUjEMI08cQ02UvhEYO4q9` | new |
+| `Mapping Runtimes and CLIs <!DOCTYPE.txt` | 4,061 | txt | `1l7XwWr3UqSl039j-omAfzMJt8zsg8Lxz` | new |
+| `The Architecture: How Data Moves` | 4,235 | Doc | `1mCha3dcYyewX7bb0WcxTak0wfsUYqpfywDWrnnbAtfA` | new |
+| `Setting up a local shared memory layer` | 4,369 | Doc | `1vlzmQEXzD08GakoLET7tfEzZYb5rBzGD110arrwcPNU` | new |
+| `Starting Point` | 5,497 | Doc | `1WnxjarknqNYNOoBYEZkdhPdc_kLtlRsVzfTyt3eWemk` | new |
+| `1. Well I need to plan all this shit for later This...` | 4,456 | Doc | `1IzmY7KofZ52vHhJsfE6xH_u_IJokhV417hlxJJs78JY` | new |
+| `Yeah, you're familiar with the open source memory layer, right? The MemO repo.` | 4,552 | Doc | `1ptUKzul45NBWeDx60KwZof_EEdvXzzMM9kPkkNXhvy4` | new |
+
+### `TRAINING ` — `1JcF18ryYB2HwGzbF94aB9ltn3cmeJHj9` — 2 files
+
+| Title | Bytes | Type | id | Status |
+|---|---|---|---|---|
+| `Page - Purpose - Key evidence sources` | 1,024 | Doc | `1h8j_1blV195AeWo2MMiYFeLZF-KqE2tg49_s500GloY` | new |
+| `failure_log_template.md` | 3,306 | Doc | `1IiecmOyrMjyF8_TiVdP2bstjW2PbVUV_FOyWf0RmbI0` | new |
+
+### `PROTOCOLS` — `101iQBD3Hcr-yZv3yu0OHkS2BS4NwxNtE` — 1 file
+
+| Title | Bytes | Type | id | Status |
+|---|---|---|---|---|
+| `Recursive Training Through Verification - Google Search` | 1,689,751 | pdf | `1gbObJ3NqLoF4jLBi5_v8lMiDgwmRTmvX` | **DUP** — exact byte match on disk |
+
+### `KV_Cache_Compression` — `1L5Xj-Jf-Q9rYSXE8LCdLUojfXkbeOqwG`
+
+**Empty.** 0 files.
+
+### Net
+
+**11 new files** (9 Docs, 3 docx, 1 txt, minus overlap) — 3 of the 14 entries are
+already in the corpus. Retrieval is **not yet done**: see the blocker below.
+
+### Blocker — small files have no safe byte path
+
+`download_file_content` returns base64 **inline** for these sizes (tested on
+`both.docx` 9,384 and `URL's-MEMORY LAYER .docx` 20,651 — neither spooled to
+disk). The spool-to-a-JSON-file path that CLAUDE.md documents only engages for
+large files; it handled the 1.88 MB PDF, it does not handle a 9 KB docx.
+
+Writing an inline result means routing base64 through model output, which
+CLAUDE.md forbids without qualification — it truncates silently and has already
+corrupted a file here once. So these 11 were **not** written.
+
+`read_file_content` would return each one, but as a "natural language
+representation" whose format is explicitly not stable — that is not an untouched
+original and fails hard rule 1 for `01-sources/`.
+
+**Needs an operator decision.** Options, no recommendation implied by order:
+1. Allow inline base64 **with a mandatory byte-size + sha256 check** against
+   Drive's stated size, treating a mismatch as a hard fail. Makes the documented
+   failure mode non-silent, which is the whole reason for the rule.
+2. Pull the 9 Docs as text via `read_file_content` (matching how existing Doc
+   exports already landed in the corpus) and leave the 3 docx + 1 txt for a
+   path that preserves bytes.
+3. Retrieve these 11 by some other route entirely — device-side download,
+   or a tool that writes to disk without passing bytes through the model.
