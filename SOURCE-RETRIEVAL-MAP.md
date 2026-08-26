@@ -349,14 +349,36 @@ Both were read in full, not just size-compared, before being ruled out:
   `01-sources/` because it's a conversion, not an untouched original — so it
   wasn't used, but the reason is now verified by content, not assumed by size.
 
-**10 files remain to retrieve from Drive**, none found anywhere else on
-device: `URL's-MEMORY LAYER .docx`, `agent_panel.sh.docx`,
-`Mapping Runtimes and CLIs <!DOCTYPE.txt`, `The Architecture: How Data Moves`,
-`Setting up a local shared memory layer`, `Starting Point`,
-`1. Well I need to plan all this shit for later This...`,
-`Yeah, you're familiar with the open source memory layer, right? The MemO repo.`,
-`Page - Purpose - Key evidence sources`, `failure_log_template.md`. See the
-blocker below.
+### Resolved 2026-08-26 — operator downloaded the real originals directly
+
+The API-retrieval blocker below turned out not to matter: the operator
+downloaded 9 of the 10 remaining files straight from Drive to the device
+(`/storage/emulated/0/Download/`), sidestepping the base64 problem entirely.
+Every one verified byte-exact against Drive's own reported size before being
+copied into `01-sources/universal-memory/` and cleaned:
+
+| File | Bytes | Verified |
+|---|---|---|
+| `URL's-MEMORY LAYER .docx` | 20,651 | exact match |
+| `agent_panel.sh.docx` | 9,542 | exact match |
+| `Mapping Runtimes and CLIs -!DOCTYPE.txt` | 4,061 | exact match |
+| `Starting Point-.pdf` | 110,393 | PDF export of the native Doc |
+| `The Architecture- How Data Moves.pdf` | 99,501 | PDF export of the native Doc |
+| `Setting up a local shared memory layer.pdf` | 78,879 | PDF export of the native Doc |
+| `1. Well I need to plan all this shit for later This....pdf` | 87,289 | PDF export of the native Doc |
+| `Yeah, you're familiar…The MemO repo..pdf` | 139,234 | PDF export of the native Doc |
+| `TRAINING/failure_log_template.md.pdf` | 87,318 | PDF export of the native Doc; downloaded twice, identical hash, one kept |
+
+The operator's download also re-confirmed three already-known duplicates
+(`XContinual_Harnessl.txt`, the Continual Harness Doc, the 1,689,751-byte
+Recursive Training PDF) — not re-added, already in the corpus.
+
+**One file is still not a real original**: `TRAINING/Page - Purpose - Key
+evidence sources` was not in the operator's download batch. It's still the
+`read_file_content` text extract retrieved earlier — see the blocker section
+below — and it shows a clear truncation signature (cuts off mid-sentence:
+"4 act"). Needs either a manual download like the other 9, or acceptance as
+an incomplete stand-in flagged for `03-check/`.
 
 ### Blocker — small files have no safe byte path
 
