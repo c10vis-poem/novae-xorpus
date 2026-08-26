@@ -184,8 +184,21 @@ folder — **9 files total, 2 of them PDFs.** Full listing:
 The first is in the parent folder; the other eight are in `Whyyounofix`
 (`1K2kfDDBsa2WNDIkp6_-PRdzvxPdq5Cvc`).
 
-**Status:** the 7 text/Doc files pull through the Drive connector. The 2 PDFs
-need a byte-exact transfer path — see "Retrieval paths" below.
+**Status 2026-08-26:** the 7 text/Doc files are **retrieved** to
+`01-sources/whyyoucodevoicelikeass/`. The 2 PDFs still need a byte-exact
+transfer path.
+
+Two defects found on retrieval, both in the source, neither repairable here:
+
+- **`local voice layer `** is **truncated in Drive itself.** It is exactly
+  3,239 bytes — matching Drive's own reported size — and ends mid-word:
+  `"Your device will show a sy"`. Nothing was lost in transit; the Drive copy
+  is incomplete. Same class of problem as the 0-byte `Building inside of
+  Google` in item 15.
+- **`whyyounocodegoodai` and `in order to bypass the memory killer…` are
+  byte-identical** — two distinct Drive Docs with different IDs and titles
+  exporting to the same 6,035 bytes (sha256 `e7d3088968…`). Both were kept;
+  nothing merged, per hard rule 2.
 
 ## 13 · 12:26 — "PDF Recursive Training Through Verification - Google Search"
 
