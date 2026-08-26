@@ -40,6 +40,28 @@ spellings — never rewrite a source to match the canon.
 
 ## Tools and skills
 
-Nothing here yet. Populated when the grill session defines what's needed —
-not before, and not by copying in a library. A skill without a stated trigger
-does not get installed.
+**`tools/clean.py`** — the only tool here. Converts `01-sources/` to
+`02-clean/` in one pass: pymupdf for PDFs, pandoc for docx and html, plain
+read for text. Detects PDFs by magic bytes, so extensionless files work.
+Strips a fixed furniture list and runs a word-frequency loss check against the
+raw extraction. Re-run it whenever new sources land — it is idempotent and
+rewrites the whole tree.
+
+    python3 tools/clean.py
+
+Its loss check does **not** satisfy hard rule 5. Same script, no vote.
+
+No skills yet. Populated when the grill session defines what's needed — not
+before, and not by copying in a library. A skill without a stated trigger does
+not get installed.
+
+## Retrieval — how Drive files actually come down
+
+The Google Drive connector works and is the normal path. Large files are not a
+problem: when an MCP result exceeds the inline cap the harness spools the whole
+thing to a JSON file on disk and returns the path. Read that file, decode the
+`content` field, write the bytes — the base64 never enters context. This works
+for multi-megabyte binaries. **Never paste base64 through model output**; that
+truncates silently and has already corrupted files once.
+
+rclone was never needed. No remote is configured and none is required.

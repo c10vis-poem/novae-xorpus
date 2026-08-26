@@ -302,6 +302,18 @@ or write the twenty lines that do the job. If a sub-agent chokes on a tool, do
 it directly. A blocked tool has already cost this project more than a day of
 waiting — it is never a reason to stall.
 
-## Status
+## Status — 2026-08-26
 
-Nothing cleaned yet.
+| | |
+|---|---|
+| `01-sources/` | **82 files** across 12 directories |
+| `02-clean/` | **78 files**, produced by `tools/clean.py` |
+| `03-check/` | empty — the RLVR pass has not been run |
+
+Loss check on the 78: 63 zero-loss, 14 losing only verified furniture, 0
+unexplained. One source skipped (`technical-builder-style.skill.zip` — a zip
+has no text to extract); it stays in `01-sources` as a source.
+
+**Nothing self-certifies.** That loss check was run by the same script that did
+the conversion, so it does not count as the check. `03-check/` still needs an
+independent tool per hard rule 5.
