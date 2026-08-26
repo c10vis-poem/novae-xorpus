@@ -301,7 +301,7 @@ a fresh session enumerated it with no refusal. **11 files + 3 subfolders.**
 | `Continual harness online adaptation for self-improving foundation agents` | 31,628 | Doc | `1GUhHGOkfhhlYddpwhm_1wJomxhdACH5pbPn9fAOfXaY` | **DUP** — `continual-harness/…(Google Doc export).txt` |
 | `URL's-MEMORY LAYER .docx` | 20,651 | docx | `1_npa36CkEZb8pyuQpuHRWPw-rSTZV1Tl` | new |
 | `agent_panel.sh.docx` | 9,542 | docx | `1QIhJDEi6UJ6811nLw2vKlN2mqCe_F0Ib` | new |
-| `both.docx` | 9,384 | docx | `1LCWTMuQU4bahUjEMI08cQ02UvhEYO4q9` | new |
+| `both.docx` | 9,384 | docx | `1LCWTMuQU4bahUjEMI08cQ02UvhEYO4q9` | **RETRIEVED — no Drive download needed.** Found byte-identical (sha256 match) already sitting on device in two legacy vaults (`OBSIDIAN_VAULT.md` and `OBSIDIAN-WIKI.md`, `…/repo-data-bank/Automated scripts for filed management and data retrieval/`). Copied straight from there into `01-sources/universal-memory/`, verified by hash, cleaned. |
 | `Mapping Runtimes and CLIs <!DOCTYPE.txt` | 4,061 | txt | `1l7XwWr3UqSl039j-omAfzMJt8zsg8Lxz` | new |
 | `The Architecture: How Data Moves` | 4,235 | Doc | `1mCha3dcYyewX7bb0WcxTak0wfsUYqpfywDWrnnbAtfA` | new |
 | `Setting up a local shared memory layer` | 4,369 | Doc | `1vlzmQEXzD08GakoLET7tfEzZYb5rBzGD110arrwcPNU` | new |
@@ -328,8 +328,27 @@ a fresh session enumerated it with no refusal. **11 files + 3 subfolders.**
 
 ### Net
 
-**11 new files** (9 Docs, 3 docx, 1 txt, minus overlap) — 3 of the 14 entries are
-already in the corpus. Retrieval is **not yet done**: see the blocker below.
+**11 new files** originally (9 Docs, 3 docx, 1 txt) — 3 of the 14 entries were
+already in the corpus proper. A device-wide search (2026-08-26, on request)
+found one more of the 11 already sitting on device outside the corpus:
+`both.docx`, byte-identical, now retrieved and cleaned — see the row above.
+That search also turned up two near-misses that are **not** the same file and
+were left alone: `URL's.docx` (10,500B) + `MEMORY LAYER .docx` (19,439B), two
+separate documents whose names echo Drive's combined
+`URL's-MEMORY LAYER .docx` (20,651B) but whose sizes don't match — likely
+earlier drafts, not duplicates. And a `.md` titled `1. Well I need to plan...`
+matches Drive's Doc of the same name by title only; it's already a converted
+copy, not a verbatim original, so it doesn't satisfy hard rule 1 and wasn't
+used.
+
+**10 files remain to retrieve from Drive**, none found anywhere else on
+device: `URL's-MEMORY LAYER .docx`, `agent_panel.sh.docx`,
+`Mapping Runtimes and CLIs <!DOCTYPE.txt`, `The Architecture: How Data Moves`,
+`Setting up a local shared memory layer`, `Starting Point`,
+`1. Well I need to plan all this shit for later This...`,
+`Yeah, you're familiar with the open source memory layer, right? The MemO repo.`,
+`Page - Purpose - Key evidence sources`, `failure_log_template.md`. See the
+blocker below.
 
 ### Blocker — small files have no safe byte path
 
