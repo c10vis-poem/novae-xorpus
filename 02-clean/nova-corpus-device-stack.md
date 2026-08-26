@@ -15,6 +15,15 @@ extraction_limits: |
        "RAM16 GB") because label and value were separate styled spans with no
        separator between them.
   The embedded <style> block (25,625 chars of CSS) was stripped as furniture.
+check_note: |
+  The word-frequency loss check used on the other cleaned files DOES NOT WORK
+  on this one and must not be taken as a pass. Fused tokens like "CHIPSM8750"
+  hide "SM8750" from a word diff, so the check reports false losses; correcting
+  the tokenizer overshoots the other way (1,466 output words vs 1,358 source).
+  Spot checks confirm the terms are present — SM8750 x3, Hexagon x3, Jetson x8,
+  Tailscale x10, TOPS x12 — but presence-by-spot-check is not the mechanical
+  verification hard rule 5 requires. This file needs the 03-check pass with an
+  independent tool before it can be trusted.
 ---
 
 Nova Corpus — Device Stack
