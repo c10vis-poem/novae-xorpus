@@ -150,15 +150,42 @@ Folder `1ICuqa9Qe2cLsxKbRoZp2M_XVXJR0ZRXK` — **exactly 2.**
 
 ## 12 · 12:24 — "Entire folder= •⛔-whyyoucodevoicelikeass-"
 
-**NOT FOUND under that name.** Nothing in Drive matches. Closest:
+**FOUND — 2026-08-26.** The earlier "NOT FOUND" entry was wrong; the folder
+exists under exactly the name given.
 
-| Candidate | Where |
-|---|---|
-| folder `Whyyounofix` | `1K2kfDDBsa2WNDIkp6_-PRdzvxPdq5Cvc` — contains `whyyounocodegoodai` (Doc, 5,166) |
-| `whyyoubreaknofix` (PDF, 514,551) | `1TZ1GUg0BujG4xwICvcnxC7Mn2_55ohHa`, in the parent folder |
-| folder `Whyyounofix` (second) | `1Vw4wmlLE3AW03y-sy296IRHvqwv8mafH` — holds `Copy of whyyoubreaknofix` |
+Folder `•⛔-whyyoucodevoicelikeass-` = `1pQujc0sNgy45-xJsHQb2Fb9R64UduuPN`,
+inside `--🎯 PENDING _❓❓⏳--` (`10wZuZV6A0D_H_FjnbPy6rrkavceuoRpS`).
 
-**Needs your confirmation** — renamed since, or a different folder.
+Direct contents — **2 items:**
+
+| Exact name | Type | Bytes | Drive ID |
+|---|---|---|---|
+| `whyyoubreaknofix` | PDF | 514,551 | `1TZ1GUg0BujG4xwICvcnxC7Mn2_55ohHa` |
+| `Whyyounofix` | folder | — | `1K2kfDDBsa2WNDIkp6_-PRdzvxPdq5Cvc` |
+
+`whyyoubreaknofix` was previously listed as a speculative "closest candidate."
+It is not a candidate — it is the folder's actual content.
+
+**Scope settled 2026-08-26:** the operator counts the subfolder as part of this
+folder — **9 files total, 2 of them PDFs.** Full listing:
+
+| Exact name | Type | Bytes | Drive ID |
+|---|---|---|---|
+| `whyyoubreaknofix` | PDF | 514,551 | `1TZ1GUg0BujG4xwICvcnxC7Mn2_55ohHa` |
+| `Fastest Way to Read Screen Text - Google Search` | PDF | 1,669,613 | `15o2NkTmybby-hOO8zWsG8a3-EyuqsPRh` |
+| `whyyounocodegoodai` | Doc | 5,166 | `1RUuBEmhDT-HaiVg0TSAAJefCIG8WgTwJOv5U1dU_2vw` |
+| `in order to bypass the memory killer…` (long title) | Doc | 5,166 | `1ok0srd_5JrN3lDdpgXG0cFpiED1G-vxli9BqmlA6xPU` |
+| `Fixitnowpaigow` | Doc | 5,051 | `1ZfJ8CUWLumG6QQ2TYaD83e0J54JOhGbg3UgWgMEEHAs` |
+| `no shit Sherlock.` | Doc | 4,879 | `1twaXlMPJ3ouSmYZ8E2fv_8mLY6SSSVIGHxO8mBvSVnA` |
+| `youfixitnowgwilo` | Doc | 4,038 | `1PU6pf6O17aIV-seNb0vU5oTF06YJ9h3ny1Kn4a0sWKc` |
+| `local voice layer ` (trailing space) | txt | 3,239 | `1jkEpJ15dM86aVHBkz8FWqJ7xZKgjNO2N` |
+| `Untitled document` | Doc | 1,024 | `1_hogjXf-ES4G9Y_sYb8njx83a9fkmkH6Wk71JdeuNp0` |
+
+The first is in the parent folder; the other eight are in `Whyyounofix`
+(`1K2kfDDBsa2WNDIkp6_-PRdzvxPdq5Cvc`).
+
+**Status:** the 7 text/Doc files pull through the Drive connector. The 2 PDFs
+need a byte-exact transfer path — see "Retrieval paths" below.
 
 ## 13 · 12:26 — "PDF Recursive Training Through Verification - Google Search"
 
