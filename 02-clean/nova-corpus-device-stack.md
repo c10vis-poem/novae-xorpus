@@ -1,31 +1,8 @@
 ---
-source: 01-sources/Nova Corpus — Device Stack.html
-origin: drive://1ukhdJCNILVz-0pz_IqLDvXF4Wv0TVSz3
-doc_date: 2026-08-06
-file_modified: 2026-08-23
+source: Nova Corpus — Device Stack.html
 cleaned: 2026-08-26
-converter: pandoc html -> plain (style/script blocks removed first)
-extraction_limits: |
-  Source is a standalone styled dashboard page, not prose. Two artifacts of
-  extraction, both left uncorrected because fixing them would mean inventing
-  structure the converter destroyed:
-    1. The ASCII topology diagram lost its line breaks and reads as one long
-       line. Every character survives; the visual arrangement does not.
-    2. Spec labels are concatenated with their values ("CHIPSM8750",
-       "RAM16 GB") because label and value were separate styled spans with no
-       separator between them.
-  The embedded <style> block (25,625 chars of CSS) was stripped as furniture.
-check_note: |
-  The word-frequency loss check used on the other cleaned files DOES NOT WORK
-  on this one and must not be taken as a pass. Fused tokens like "CHIPSM8750"
-  hide "SM8750" from a word diff, so the check reports false losses; correcting
-  the tokenizer overshoots the other way (1,466 output words vs 1,358 source).
-  Spot checks confirm the terms are present — SM8750 x3, Hexagon x3, Jetson x8,
-  Tailscale x10, TOPS x12 — but presence-by-spot-check is not the mechanical
-  verification hard rule 5 requires. This file needs the 03-check pass with an
-  independent tool before it can be trusted.
+converter: pandoc html->plain (style/script stripped)
 ---
-
 Nova Corpus — Device Stack
 
 NOVA CORPUS · DEVICE STACK

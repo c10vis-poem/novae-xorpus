@@ -1,5 +1,5 @@
 ---
-source: Not wrongtxt.txt
+source: CCConvo/Not wrong on.txt
 cleaned: 2026-08-26
 converter: none - plain text
 ---

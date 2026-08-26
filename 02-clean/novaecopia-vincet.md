@@ -1,13 +1,9 @@
 ---
-source: 01-sources/NovÆcopia Vincet.docx
-origin: drive://1393wEtRmn0piqzJZfhLv_IqF8OqJrh9V
-doc_date: unstated
-file_modified: 2026-08-23
+source: NovÆcopia Vincet.docx
 cleaned: 2026-08-26
-converter: pandoc docx -> markdown
-furniture_stripped: 2 x "Use code with caution."
+converter: pandoc docx->markdown
+furniture_lines_stripped: 2
 ---
-
 - NovusÆxenti
 
 - NovÆcopia
