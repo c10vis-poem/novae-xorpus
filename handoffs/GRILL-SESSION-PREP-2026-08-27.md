@@ -6,7 +6,7 @@ status: ready
 
 # Grill Session Prep — 2026-08-27
 
-Three patterns that need to be formalized before the next grill session. All three are reusable beyond novae-xorpus.
+This document is the full context brief for the grill session. It covers three reusable patterns to formalize, plus the complete architecture, project roster, and agent build plan the grill session must produce decisions about.
 
 ---
 
@@ -115,96 +115,284 @@ Implement `MANIFEST.jsonl` at novae-xorpus root and per-folder. Define the stand
 
 ---
 
-## 3. Agent Architecture — On-Device Pipeline
+## 3. Agent Architecture — On-Device Dual-Agent System
 
-### The concierge model
+### What it actually is
 
-The on-device agent is a go-between for the user and frontier models. It does not do the hard reasoning — it structures the conversation, routes to the right model, and handles the I/O layer.
+The on-device dual-agent is the **primary AI for all daily computing**. File management, data compilation, research methods, web lookups, coding, CLI interactions, device control, cloud APIs, coordination with other agents — everything the operator does on a computer, phone, or tablet goes through one or more of these agents. It is not a routing layer to frontier models.
+
+**Frontier models (Claude Code, Gemini, NotebookLM, Perplexity deep dive) are operator-initiated.** The operator opens those sessions manually when they want to use them. The 9B can structure the handoff and prepare context for those sessions, but it does not decide when to escalate. The routing call is always the operator's.
+
+### Model roles
+
+| Model | Role | When |
+|---|---|---|
+| **0.8B Qwen · Query** | Always-on. Understands the request, breaks it down, structures it, routes. Handles simple tasks directly — prompt cleanup, Q&A, formatting, quick lookups. | Every interaction passes through here first. |
+| **9B Qwen · Execution** | Primary workhorse. Does the actual work across everything: files, research, data, web, code, CLI, cloud APIs, multi-step tasks, coordinating with other agents. | Most tasks — escalated from 0.8B when execution depth is required. |
+| **Frontier (Claude / Gemini / Perplexity / NotebookLM)** | Hard synthesis, maximum-quality output, deep research sessions, training data generation. | Operator-initiated — opened manually. 9B structures the handoff and provides context; it does not make the routing call. |
+
+### Voice I/O layer (when in use)
 
 ```
 Voice input
     ↓
-STT (dedicated tool, not the LLM)
+STT (dedicated tool — not the LLM)
     ↓
-0.8B: clean transcript → structured metaprompt
+0.8B: clean transcript → structured prompt
     ↓
 User reviews / approves
     ↓
-Route:  simple task  → 0.8B handles it directly
-        complex task → 9B constructs final prompt → frontier model executes
+9B executes (or 0.8B handles directly if task is simple)
     ↓
-TTS reads output in real time (dedicated tool)
+TTS reads output in real time
     ↓
-VAD: user can interject
+VAD: user can interject at any point
     ↓
-Follow-up: action routing (web lookup, file upload, tool call)
+Follow-up: action routing (web lookup, file op, tool call, API, other agent)
 ```
-
-### Model role assignment
-
-| model | role | when to use |
-|---|---|---|
-| 0.8B Qwen (always-on) | routing, formatting, prompt cleanup, simple Q&A | always first; handles alone if task fits |
-| 9B Qwen | complex reasoning, metaprompt construction, multi-step | when 0.8B detects complexity |
-| Frontier (Claude / API) | hard synthesis, domain knowledge, code generation | routed from 9B |
-
-### Routing rule
-
-The 0.8B makes the routing call. Escalate to 9B when: prompt word count exceeds threshold, multi-step instructions detected, or domain-specific terms are present. 9B escalates to frontier when: synthesis across multiple sources required, code generation required, or output will be used as training data and needs maximum quality.
 
 ### Memory layers
 
-| layer | scope | managed by |
+| Layer | Scope | Managed by |
 |---|---|---|
-| Context window | this session only, cleared on close | runtime |
-| mem0 | persistent across sessions, selective | 0.8B reads at start / writes at end |
-| GCP dataset | accumulates verified triples for training | automated export |
+| Context window | This session only — cleared on close | Runtime |
+| mem0 | Persistent across sessions, selective | 0.8B reads at start / writes key facts at end |
+| GCP dataset | Accumulates verified triples for LoRA training | Automated export after each verified session |
 
-Open weights models do not retain anything between sessions by default. The weights are fixed files. mem0 is what provides persistence — it stores facts the agent should remember across sessions. Fine-tuning (the GCP training loop) is the only way to permanently change what a model knows.
+Open weights models do not retain anything between sessions. The weights are fixed files on disk. mem0 is what provides persistence. Fine-tuning (the GCP training loop) is the only mechanism that permanently changes what a model knows.
 
-### The RLVR training loop
+### RLVR training loop
 
-1. Agents run tasks during normal sessions
-2. Red agent / cross-auditor verifies each output (pass / fail) — this is the verifiable reward signal
-3. Verified task→output→verdict triples accumulate in Cloud Storage
+1. Agents do real work during normal sessions
+2. Red agent / cross-auditor verifies each output — pass or fail. This is the verifiable reward signal.
+3. Verified task → output → verdict triples accumulate in Cloud Storage
 4. At threshold (e.g., 500 new verified triples), GCP runs a LoRA fine-tuning job on the 9B
-5. Updated LoRA adapter is pushed back to home node
-6. 9B is now better at the verified task types
-7. Base model weights are never modified — only the LoRA adapter layer updates
+5. Updated LoRA adapter pushed back to home node — base model weights never modified
+6. Evaluate 9B against benchmark. If degraded: discard adapter, start fresh from base.
+7. Repeat. Each cycle the 9B gets better at the verified task types.
 
-### Why LoRA not full fine-tuning
+**Why LoRA, not full fine-tuning:** LoRA adds a thin trainable layer on top of frozen base weights. One bad training run → discard the adapter, base untouched. Full fine-tuning modifies base weights permanently. Use LoRA on GCP too — H100 runs burn through credits fast.
 
-LoRA adds a thin trainable layer on top of frozen base weights. If a training run degrades the model (bad data, too narrow), discard the adapter and start fresh without touching the base. Full fine-tuning modifies the base weights permanently — one bad run and the model is corrupted.
+### Architecture type
 
-### Mixture of Agents
-
-What this describes is **MoA** (Mixture of Agents) — multiple separate models, an orchestrator routes queries to the appropriate one. This is correct for the described architecture. MoE (Mixture of Experts) is a single model's internal architecture, unrelated.
-
-### Agent roster
-
-| agent | model | role |
-|---|---|---|
-| Concierge | 0.8B Qwen | prompt construction, routing, TTS/VAD coordination |
-| Executive | 9B Qwen | complex reasoning, frontier handoff |
-| Red Agent | 9B or frontier | cross-auditor, output verification, RLVR signal |
-| NPU Manager | Nano / smol | shell/terminal assistant, low-level ops |
-| Help Desk | Nano / smol | manual/doc lookup, Q&A |
-| Web Agent | 9B or frontier | search, trending repos, news |
-| Script Collector | GCP Agent Builder | RAG over scripts, tool discovery, audit |
-
-### GCP Vertex AI Agent Builder
-
-Fits as: cross-agent auditor, document Q&A engine, script writer/collector. The Agent Builder is essentially managed RAG + tool-calling — exactly the cross-auditor and script-collector role. $1,000 credits cover significant inference time. Training runs on H100s burn through fast — use LoRA on GCP too, not full fine-tuning.
+This is **MoA (Mixture of Agents)** — multiple separate models, operator or orchestrator routes to the appropriate one. Not MoE, which is a single model's internal architecture and unrelated.
 
 ---
 
-## Next grill session action items
+## 4. Project Roster and Repo Build Plan
 
-1. Formalize corpus-verify as an installable skill with trigger, config layer, schema
-2. Implement `MANIFEST.jsonl` at novae-xorpus root and each source folder
-3. Re-clean `Nova Corpus — Device Stack.html` with html.parser, re-run check.py on it
-4. Decide on `SKILLS.md/technical-builder-style.skill.zip` — clean its text members or formally document the skip
-5. Close the six retrieval gaps from the 2026-08-26 handoff: part1-lex, Coding-questions (2), TERMUX (2 + PDF), App_Builders_Guide_ (~3), AESOP_XI_ (~1)
+These are the repos and APKs the grill session must produce repo structure, file tree, and build roadmap for. Source: README grill mandate + operator additions.
+
+### APK layer (Horizons stack)
+
+| Project | Type | Status |
+|---|---|---|
+| **Horizons-UI** | Android APK — main UI layer for the on-device agent | Needs overhaul (`horizons-ui-v1.2` repo) |
+| **Æsc** | Android APK — accessibility daemon #1 | Separate repo |
+| **Æyre** | Android APK — accessibility daemon #2 | Separate repo |
+
+All three run independently. Three separate repos is probably the right structure. Tools likely assigned: OpenAI + Node.js + Omni Route.
+
+### Agent layer (NovÆxenti / NovÆxopia / Æsop-Xi)
+
+| Project | What it is | Open question |
+|---|---|---|
+| **NovÆxenti** | The actual agent logic — models, tools, skills, dual-agent query/executor that runs through Horizons-UI and the accessibility daemons | — |
+| **NovÆxopia** | The claw — tools, webhooks, on-device accessibility engines, runtime, PC/MCP servers, IDE access | Whether this compiles with NovÆxenti or must stand alone |
+| **Æsop-Xi** | Orchestration layer — memory extraction protocols, agent parameters, ethical agent logic. Rules, guidelines, infrastructure for agents. Implements KAG and RLVR audits. Works with openwiki for file management. | `aesop-xi-protocol` repo needs massive overhaul |
+
+Also needs overhaul: `nova-claw-runtime`, `termux-building-skills` (scope expands to all device agent setups — far beyond Termux).
+
+### Data layer
+
+| Project | What it is |
+|---|---|
+| **NovÆxorpus** | This repo. Universal memory layer and Data Bank. The vault. |
+| **wiki.md (llm-wiki)** | Living knowledge base built from the cleaned corpus. Lives in this repo. |
+
+---
+
+## 5. Four Permanent Agents
+
+These are fixtures in the architecture. Source: README grill mandate §5, operator additions.
+
+### Agent 1 — Search / Web Agent
+
+**Role:** Scrapes for latest updates, breakthroughs, currently trending repos, and industry news applicable to any project in the corpus. Cross-references and reviews what it finds so it can advise on alternative implementations or methods any project could use. Runs on a routine.
+
+**Model:** 9B or frontier (needs decision at grill session).
+**Tools:** Perplexity web search substitution + Crawl4AI (open-source Firecrawl equivalent, confirmed 2026-08-26).
+
+### Agent 2 — Help Desk
+
+**Role:** Every app built gets running instructions, like any user manual. Upload a manual into this agent and it grabs data live, answers questions by voice, acts as a live help desk. Works with any operator manual, system, or repo — whatever files are uploaded become its enterprise data bank for questions, how-tos, and troubleshooting on any installed project.
+
+**Model:** Nano / smol (see §7 — exact model to be decided at grill session).
+**Platform:** On-device. Loaded on demand, not always-on.
+
+### Agent 3 — Housekeeping / Script Keeper / Data Extractor
+
+**Role:** Goes through at end of day — collects chat logs, tool-calling history, all of it. Writes into structured Markdown and JSONL. Audits against the corpus and uses open web search tools for RLVR audits. Being local and the main hub, it also assists across the full three-device work setup: pulling tools, grepping data, acting as active-workflow cross-agent auditor.
+
+**Platform:** One of the two apps custom-built on Google Cloud Agent Builder using enterprise app-building credits. GCP Agent Builder = managed RAG + tool-calling — exactly the cross-auditor and script-collector role.
+
+### Agent 4 — Red Agent Auditor
+
+**Role:** Cross-auditor, output verification, RLVR signal generator. Verifies every output independently — pass or fail. The verified triples it produces are the training data that feeds the GCP LoRA loop.
+
+**Model:** 9B or frontier.
+**Platform:** One of the two apps custom-built on Google Cloud Agent Builder.
+
+---
+
+## 6. GCP Enterprise Build
+
+What gets built on Google Cloud with the enterprise developer credits. The grill session must decide which agents map to which GCP services and produce the build plan.
+
+### What GCP handles
+
+| Capability | What it means |
+|---|---|
+| **Enterprise query agents** | Agents 3 and 4 (Housekeeping and Red Agent) built on GCP Agent Builder — managed RAG + tool-calling over the operator's data |
+| **Data retrieval** | RAG over scripts, chat logs, corpus documents, tool inventory — queried without loading every file |
+| **Audit verification** | Red Agent on GCP runs output verification independently of the home node |
+| **Bucket storage** | Cloud Storage accumulates verified RLVR triples (task → output → verdict) from every session |
+| **Script training** | H100 LoRA fine-tuning jobs on the 9B, triggered at threshold (e.g., 500 new verified triples). Updated adapter pushed back to home node. |
+
+### Constraints
+
+- Use LoRA on GCP — not full fine-tuning. H100 runs burn through credits fast.
+- $1,000 enterprise credits cover significant inference time but finite training compute.
+- Base model weights never modified — only the LoRA adapter layer updates.
+- If a training run degrades the model: discard adapter, start fresh from base.
+
+### What stays on-device
+
+The 0.8B and 9B run entirely on the home node. GCP is compute and auditing — not the primary inference path. The dual-agent operates without GCP connectivity for all local tasks.
+
+---
+
+## 7. Nano Agent Variants
+
+NPU Manager and Help Desk both use sub-2B "nano" or "smol" models. The grill session must decide exact models per role after testing. What is known:
+
+### Constraints (non-negotiable)
+
+- Must run on Android on-device — no torch wheels available on Android, so torch-based models need a separate compute path
+- Hexagon NPU is available for hardware-accelerated inference (QAIRT routing)
+- Always-on agents must have minimal footprint — sub-1B ideal for the NPU Manager role
+
+### Role-specific requirements
+
+| Agent | Model tier | Why |
+|---|---|---|
+| **NPU Manager** | Sub-1B, always-on | Handles shell/terminal/low-level device ops. Runs continuously. Needs to fit in NPU SRAM or load/unload fast. |
+| **Help Desk** | 1–2B, loaded on demand | Doc Q&A by voice. Heavier than NPU Manager but only active when invoked. Can use CPU fallback if NPU is busy. |
+
+### Candidate model families
+
+- **SmolLM2** (HuggingFace): 135M, 360M, 1.7B — purpose-built for on-device inference, ONNX-exportable
+- **Qwen 2.5** 0.5B — lightest in the Qwen family, same inference stack as the 0.8B/9B pair
+- **Phi-3 mini** (3.8B) — larger than nano tier, but ONNX-available if NPU Manager role needs more capability
+
+**Open:** exact model selection per role — to be tested and decided at or after the grill session.
+
+---
+
+## 8. Frontier Sessions — Operator-Initiated
+
+This is a standing correction to any framing that describes the 9B as "deciding when to escalate to frontier." That is wrong.
+
+**The operator opens frontier sessions manually.** Claude Code, Gemini, NotebookLM, Perplexity deep dive — the operator reaches for these tools when they want them. The dual-agent does not make that call.
+
+**What the 9B does when the operator opens a frontier session:**
+- Structures the prompt and surfaces relevant context from mem0 and the corpus
+- Prepares the handoff so the frontier session starts with everything it needs
+- Records the output for potential RLVR verification
+
+**What the 9B does not do:**
+- Autonomously decide to open or call a frontier model
+- Route to frontier without operator action
+- Treat frontier escalation as a fallback for tasks it "can't handle"
+
+The 9B handles most things. When the operator wants a Claude Code session, or a Gemini deep research session, or a NotebookLM notebook, they open it. The 9B prepares; the operator drives.
+
+---
+
+## 9. Tool and Asset Assignment
+
+Source: README §"Tool and asset assignment" (2026-08-26). Assignment is per-agent, not global. Some is tried and true, much is untested. The grill session states, per agent, what gets used and what still needs a trial. An assignment with no stated reason is a guess and must be labelled one.
+
+### Critical first (corpus process, ahead of everything)
+
+- **ECC**
+- **Honey for Devs**
+- **Pocock Skills**
+
+### Full working inventory — all need corpus process treatment
+
+These are source material, not just dependencies. They get skill-and-tool extraction the same way a Qualcomm SDK manual does.
+
+**ECC** · **Honey for Devs** · **Pocock Skills** · **Prime Agent** · **code review graph** · **reverse skills** · **Obsidian skills** · **notebooklm-py** · **Graphify skills** · **OpenAI** · **GSD** · **mem0** · **OB1** · **Omni Route** · **Claude Video** · **Node.js** · **Crawl4AI** · **Perplexity web search substitution** — and more.
+
+### Current likely assignments
+
+| Consumer | Tools | Confidence |
+|---|---|---|
+| Three-APK setup (Horizons-UI/Æsc/Æyre) | OpenAI + Node.js + Omni Route | Operator: "pretty sure this is going to work well" |
+| On-device open-weight models (NovÆxenti) | Prime Agent; possibly Qwen CLI if Qwen drives it | Unconfirmed |
+| Claude-based agents | ECC | — |
+| Web-search agent | Perplexity web search substitution + Crawl4AI | Confirmed 2026-08-26 |
+| Auditing and KAG | Graphify + notebooklm-py | — |
+| Specific agents (TBD which) | Claude Video, reverse skills | TBD |
+| Multi-agent swarms | Ringer, CrewAI, other swarm tools | — |
+| Universal memory bank | mem0, OB1, Reasoning Bank, openwiki + more | To be enumerated |
+
+---
+
+## 10. What the Grill Session Must Produce
+
+Source: README §"What the grill session has to produce" (operator-stated 2026-08-26). This is the mandate.
+
+1. **Evaluate remaining Drive files** — grep every remaining file, determine what is useful in the universal memory layer and database
+2. **Purge the legacy vaults and repos** — evaluate three legacy Obsidian vaults for useful files or file-tree structure, then purge the rest
+3. **Run chosen files through the corpus process** — everything selected in 1–2 gets `clean.py` + `check.py` treatment. This is the initial structure of the memory layer / Data Bank.
+4. **Determine repo count** — how many repositories are needed in the immediate future; extrude information from the "grand repository" into them
+5. **Define file format and file tree for each repo** — produce an outline for each repo's README and setup docs
+6. **NovÆxenti** — produce the agent logic, model selection, tool/skill wiring spec
+7. **NovÆxopia** — produce the claw spec; decide standalone vs. combined with NovÆxenti
+8. **Æsop-Xi** — produce the orchestration layer spec
+
+**Format template:** `01-sources/architecture-edits/EDIT-Clarifying Clean Text…` — numbered file-by-file blocks, explicit destination paths, ASCII topology diagrams for dataflow, inline JSON schemas where a contract is defined. Copy the structure, not the content (it is out of date and predates the three-APK architecture).
+
+**Tools, not just skills.** Most source documents describe parameters, guidelines, and pathways — not actions. Expect at least as many tools extracted as skills, likely more. A plan that only produces a skill library has read these documents wrong.
+
+**The grill agent is the traffic director.** The directory tree is not run by hand in Termux. The grill agent executes it and manages development of the architectural framework.
+
+---
+
+## 11. Wiring Still Needed
+
+Not blockers on the grill session, but required for the ecosystem to function:
+
+- Obsidian hooks **and** git hooks on this vault/repo
+- **Claude-in-Obsidian** — operator needs to be walked through setup
+- **Obsidian ↔ GitHub** — connection, UI, and desktop applications
+- **graphify** wired to operator's main account
+- **notebooklm-py** skill — so Gemini notebooks attach and update into this repo
+
+---
+
+## Next Grill Session Action Items
+
+1. Re-clean `Nova Corpus — Device Stack.html` with html.parser, re-run check.py — one file, seven known fused tokens
+2. Decide on `SKILLS.md/technical-builder-style.skill.zip` — clean its text members or formally document the skip (hard rule 2)
+3. Implement `MANIFEST.jsonl` at novae-xorpus root and per folder; define schema for ECC repo and other corpus targets
+4. Formalize corpus-verify as an installable skill: trigger string, config layer, skill definition file in `skills/`
+5. Close six retrieval gaps from 2026-08-26: part1-lex, Coding-questions (2), TERMUX (2 + PDF), App_Builders_Guide_ (~3), AESOP_XI_ (~1)
 6. Wire: Claude-in-Obsidian, Obsidian ↔ GitHub, graphify on main account, notebooklm-py
 7. Route working inventory (ECC, Honey for Devs, Pocock Skills) through corpus process
-8. Implement MANIFEST.jsonl schema across ECC repo and other database targets
+8. Produce build plan for each repo in §4: file tree, README outline, operational mandate
+9. Decide nano model selection for NPU Manager and Help Desk after testing (§7)
+10. Decide which two GCP Agent Builder apps get built first: Housekeeping/Script Keeper or Red Agent (§6)
+11. Per-agent tool assignment: state what gets used, what still needs trial, label guesses as guesses (§9)
