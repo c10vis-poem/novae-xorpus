@@ -403,21 +403,60 @@ or write the twenty lines that do the job. If a sub-agent chokes on a tool, do
 it directly. A blocked tool has already cost this project more than a day of
 waiting — it is never a reason to stall.
 
-## Status — 2026-08-26
+## Status — 2026-08-27
 
 | | |
 |---|---|
-| `01-sources/` | **93 sources** across 14 directories (+ 5 `MANIFEST*` bookkeeping files) |
-| `02-clean/` | **92 files**, produced by `tools/clean.py` |
-| `03-check/` | empty — the RLVR pass has not been run |
+| `01-sources/` | **94 sources** across 14 directories (+ 5 `MANIFEST*` bookkeeping files) |
+| `02-clean/` | **93 files**, produced by `tools/clean.py` |
+| `03-check/` | **94 reports + `SUMMARY.md` + `FINDINGS.jsonl`** — the RLVR pass has been run |
 
-Loss check on the 93: 78 zero-loss, 14 losing only verified furniture, 0
-unexplained. One source skipped (`technical-builder-style.skill.zip` — a zip
-has no text to extract); it stays in `01-sources` as a source. 92 + 1 skip = 93.
+The 2026-08-26 counts here said 93 sources and 92 clean files. Both were one
+low. Excluding the five `MANIFEST*` files, `01-sources/` holds **94**; one of
+them (`technical-builder-style.skill.zip`) has no counterpart, so `02-clean/`
+holds **93**. 93 + 1 = 94. Raw file count is 99.
 
-Counts are **sources only**. The five `MANIFEST*` files in `01-sources/` are
-bookkeeping, not sources, and are excluded — a raw file count returns 98.
+### The check — result
 
-**Nothing self-certifies.** That loss check was run by the same script that did
-the conversion, so it does not count as the check. `03-check/` still needs an
-independent tool per hard rule 5.
+`tools/check.py` re-extracted every source with a different reader and compared
+by a different method (see "The check — RLVR" above and the header of the tool).
+94 sources checked, one report each.
+
+| verdict | files |
+|---|---|
+| PASS | 44 |
+| PASS, source has an upstream defect | 22 |
+| PASS with warnings | 22 |
+| PASS with warnings, source has an upstream defect | 4 |
+| **FAIL** | **1** |
+| **no counterpart in `02-clean/`** | **1** |
+
+**The two that are not passes, by name:**
+
+- `Nova Corpus — Device Stack.html` — **7 fused tokens.** `CHIP`, `32 GB`,
+  `CLIENTS`, and the four repo paths `c10vis-poem/Horizons-UI`,
+  `c10vis-poem/novus-agenti`, `c10vis-poem/aesop`, `c10vis-poem/nova-skills`
+  survive only welded to the label beside them (`RAM32 GB`, `CHIPSM8750`). The
+  source separates them with element boundaries; `pandoc html->plain` did not.
+  The frontmatter warning on that file was right, and it is now specific.
+- `SKILLS.md/technical-builder-style.skill.zip` — **no file in `02-clean/`.**
+  It was recorded as "a zip has no text to extract". Opened independently, the
+  archive holds text members. That content is not in the corpus.
+
+**Nothing else lost a detail.** Across the other 92 sources: zero missing
+values, zero missing text, zero content truncated by the cleaning, and zero
+lines removed that the strip policy does not cover. The "14 files lose only
+furniture" claim was re-derived from scratch and holds.
+
+**26 sources are truncated in the source itself** — an upstream defect, not a
+cleaning defect, reported and not repaired. That includes all three that were
+already suspected: `part1-lex/## Part 1- Lex (1)`,
+`universal-memory/TRAINING/Page - Purpose - Key evidence sources`, and
+`whyyoucodevoicelikeass/local voice layer `. In two of them the truncation was
+hidden behind a trailing `</content>` wrapper tag from the Drive export.
+
+Warnings, which are shape and not content: 77 values respaced, 21 files
+carrying the source's UTF-8 BOM into the middle of the markdown body.
+
+Full roll-up in [`03-check/SUMMARY.md`](03-check/SUMMARY.md); every finding
+machine-readable in `03-check/FINDINGS.jsonl`.
