@@ -68,3 +68,19 @@ spans more than one.
     Directly relevant to Task 5 (salvaging an APK as terminal daemon / NPU-manager
     microagent) — read this before starting that task, it may already be most of
     the way there.
+12. **[global]** MASTER-SKILLS.md — same aggregation pattern as MASTER-RESUME.md/
+    MASTER-CLAUDE.md, but for every attached project's `skills/*/SKILL.md`.
+    Explicitly "eventually," not urgent, per the operator (2026-08-31). Needs a
+    design call before building: full-content concatenation (matches the other
+    two masters) vs. an index table (name/description/project/path) — skills are
+    typically much longer than a RESUME.md, so concatenation may be the wrong
+    shape here even though it's the established pattern. Also needs a
+    `projects/<name>/skills` directory-symlink added alongside the existing
+    RESUME.md/CLAUDE.md file symlinks before the hook can walk it.
+13. **[global]** ECC install, now higher-priority than when originally deferred
+    (item 8) — its `unified-memory` skill (ECC Memory Vault: markdown-first,
+    project/team/user scopes, cross-harness) looks like a more mature, ready-made
+    version of what #dumbass is hand-building, and its skill/agent inventory (67
+    agents, 281 skills incl. `deep-research`, `search-first`) needs a real look
+    before adding mem0 or any other new memory/research tool on top. Install and
+    audit before evaluating alternatives further.
