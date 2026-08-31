@@ -1,6 +1,6 @@
 # Master CLAUDE.md overview (auto-generated — do not hand-edit)
 
-Regenerated: 2026-08-31T07:23:17Z
+Regenerated: 2026-08-31T20:44:49Z
 Source: novae-xorpus/tools/regenerate_masters.sh
 
 One overview across every attached project. Edit each project's own
