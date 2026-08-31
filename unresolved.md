@@ -41,25 +41,18 @@ spans more than one.
    past the 2026-08-31 session. See `aesop-voice-pipeline` skill's "Extension
    points still open." No server exists yet; `ARCHITECTURE.md` already spec'd it
    (Flask/FastAPI wrapping `VoiceEngine`).
-8. **[global / Claude Code]** ECC (agent-harness optimization) + Pocock grill-me
-   skill session — explicitly deferred past the 2026-08-31 session. Note: ECC is a
-   real, ready-to-go plugin (`.claude-plugin/plugin.json` exists in
-   `~/repos/ECC-aesop`) that has simply never been installed via the plugin
-   system — confirmed against `~/.claude/plugins/installed_plugins.json`, which
-   lists only 3 unrelated plugins. Installing it for real is a one-command fix
-   whenever this is picked up.
-9. **[aesop-xi]** OmniRoute / OB1 / ReasoningBank routing — see `ARCHITECTURE.md`
+8. **[aesop-xi]** OmniRoute / OB1 / ReasoningBank routing — see `ARCHITECTURE.md`
    §10 in aesop-xi. Genuinely unresolved, not just undocumented: how OB1 relates to
    OmniRoute's real SQLite hybrid vector store, whether "episodic" is a distinct
    5th memory type, and whether Postgres+vector's actual role is continuous recall
    or a post-training evaluation store. Needs a real design decision before
    anything gets built against it.
-10. **[global / Claude Code]** Universal skill placement pattern — `obsidian-skills`
-    proves the working model (plugin installed from a `directory` marketplace
-    source pointing at its own repo, not copied into `~/.claude/skills/`). Worth
-    applying the same pattern to graphify / notebooklm-py / honey-for-devs if the
-    goal is tool-agnostic skills usable by more than just Claude Code.
-11. **[aesop-xi]** Real remote work merged in at end of session, never reviewed:
+9. **[global / Claude Code]** Universal skill placement pattern — `obsidian-skills`
+   proves the working model (plugin installed from a `directory` marketplace
+   source pointing at its own repo, not copied into `~/.claude/skills/`). Worth
+   applying the same pattern to graphify / notebooklm-py / honey-for-devs if the
+   goal is tool-agnostic skills usable by more than just Claude Code.
+10. **[aesop-xi]** Real remote work merged in at end of session, never reviewed:
     a bridge daemon (`deploy/phone/bridge/aesopd.py`), a supervised `llamad`
     daemon with actual NPU/Hexagon accelerator offload (`deploy/phone/daemons/`),
     `protocol/bridge-protocol.md`, and a `termux-helper` skill — 6 commits that
@@ -68,7 +61,7 @@ spans more than one.
     Directly relevant to Task 5 (salvaging an APK as terminal daemon / NPU-manager
     microagent) — read this before starting that task, it may already be most of
     the way there.
-12. **[global]** MASTER-SKILLS.md — same aggregation pattern as MASTER-RESUME.md/
+11. **[global]** MASTER-SKILLS.md — same aggregation pattern as MASTER-RESUME.md/
     MASTER-CLAUDE.md, but for every attached project's `skills/*/SKILL.md`.
     Explicitly "eventually," not urgent, per the operator (2026-08-31). Needs a
     design call before building: full-content concatenation (matches the other
@@ -77,10 +70,16 @@ spans more than one.
     shape here even though it's the established pattern. Also needs a
     `projects/<name>/skills` directory-symlink added alongside the existing
     RESUME.md/CLAUDE.md file symlinks before the hook can walk it.
-13. **[global]** ECC install, now higher-priority than when originally deferred
-    (item 8) — its `unified-memory` skill (ECC Memory Vault: markdown-first,
-    project/team/user scopes, cross-harness) looks like a more mature, ready-made
-    version of what #dumbass is hand-building, and its skill/agent inventory (67
-    agents, 281 skills incl. `deep-research`, `search-first`) needs a real look
-    before adding mem0 or any other new memory/research tool on top. Install and
-    audit before evaluating alternatives further.
+12. **[global]** ECC's `unified-memory` skill (ECC Memory Vault: markdown-first,
+    project/team/user scopes, cross-harness) vs. the hand-built #dumbass approach —
+    ECC itself is now installed and configured (2026-08-31: plugin at user scope,
+    hooks at standard profile, `common`/`python`/`kotlin` rule packs copied to
+    `~/.claude/rules/ecc/`), so this is no longer "should we install it," it's
+    "should novae-xorpus adopt or fold into the vault instead of continuing to
+    hand-build the same thing." Real design decision, not yet made.
+13. **[aesop-xi]** ECC dashboard-on-tablet via SSH tunnel — steps given
+    (2026-08-31: `sshd` started on phone, port 8022, password still needs setting
+    via `passwd`; tunnel command given: `ssh -L 3456:127.0.0.1:3456 -p 8022
+    u0_a538@<phone-LAN-IP> `, then browse `http://127.0.0.1:3456` on the tablet
+    while `npm run dashboard:web` runs on the phone) — never confirmed working.
+    Phone's LAN IP (`172.20.20.20` as of this session) can change on reconnect.
