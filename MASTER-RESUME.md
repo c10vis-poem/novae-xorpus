@@ -1,6 +1,6 @@
 # Master RESUME overview (auto-generated — do not hand-edit)
 
-Regenerated: 2026-09-06T03:57:47Z
+Regenerated: 2026-09-06T04:19:46Z
 Source: novae-xorpus/tools/regenerate_masters.sh
 
 One overview across every attached project. Edit each project's own
@@ -49,6 +49,17 @@ session-close plugin.
    dev server (needs Node 22+ inside proot-Debian, undici incompatibility with
    proot's default Node 20); terrestrial-brain's Obsidian-plugin build
    (`tsc: not found`, not root-caused).
+4a. **Git: all of the above is merged, not just committed.** aesop-xi's own
+    fixes (PR #6) are merged to `main` — CI was green, auto-merge (already
+    configured on this repo) took it straight through.
+    `NovA-terrestrial-brain` had **zero CI** before this session; added a real
+    workflow (`.github/workflows/ci.yml`, builds+tests the obsidian-plugin),
+    set branch protection on `main` requiring it, and queued PR #2 for
+    auto-merge — check that it actually went green and merged; it was still
+    running its first-ever CI pass when this session ended.
+    `novae-xorpus` PR #5 (the unresolved.md + regenerated MASTER-*.md files)
+    is **not** auto-mergeable — it's a private repo, and GitHub restricts
+    auto-merge on private repos to paid plans. Needs a manual merge click.
 5. **Happy Ending plugin installed** (session-close/handoff skill,
    skills-for-ai.com, single-seat license) — registered by hand-editing Claude
    Code's own config JSON since the interactive `/plugin marketplace add` flow
