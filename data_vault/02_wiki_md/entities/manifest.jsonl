@@ -1,0 +1,4 @@
+{"path": "entities/nodes", "kind": "folder", "desc": "Alpha (Moto Razr) / Beta (Jetson) / Gamma (Rubik Pi) / Delta (GCP).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "entities/schemas", "kind": "folder", "desc": "JSONL, SKILL.md, YAML profile, JSON-RPC audit schemas.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "entities/canon", "kind": "folder", "desc": "NAMING-CANON, brand ligature, motto.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "entities/permissions", "kind": "folder", "desc": "OS permissions, ADB rights, tool guards, security clearance.", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,13 @@
+{"path": "scripts/setup-aesop-sh", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/convert-raw-to-markdown-py", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/generate-jsonl-markers-py", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/gcp-cross-account-handshake-sh", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/run-audit-sh", "kind": "folder", "desc": "Red Auditor daemon — documented here, code lives outside visible tree.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/boot-sh", "kind": "folder", "desc": "Reboot execution flow (boot.sh -> tmux llm -> ow).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/system-housekeeper-sh", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/agent-panel-sh", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/npu-manager-py", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/compile-manifest-py", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/doc-to-skill-and-tool-py", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/export-drive-docs-js", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts/log-builder-py", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}

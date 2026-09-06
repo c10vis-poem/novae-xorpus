@@ -1,0 +1,4 @@
+{"path": "harnesses/prime-agent/overview", "kind": "folder", "desc": "Prime Agent overview.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/prime-agent/rlm-loop", "kind": "folder", "desc": "Recursive Language Model + persistent Python REPL.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/prime-agent/continual-harness", "kind": "folder", "desc": "State refinement + rollback.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/prime-agent/openai-client-config", "kind": "folder", "desc": "Points to OmniRoute localhost:20128.", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,10 @@
+{"path": "harnesses/ecc", "kind": "folder", "desc": "Everything Claude Code — governs Claude Code CLI sessions.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/prime-agent", "kind": "folder", "desc": "Governs on-device open-weight models via RLM.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/deepseek", "kind": "folder", "desc": "NEW per operator.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/gsd-v2", "kind": "folder", "desc": "Build-phase execution engine (fresh context per task, git branch-per-slice).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/pocock-skills", "kind": "folder", "desc": "Planning layer (grill-with-docs, to-spec, to-tickets, TDD, code-review).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/honey-for-devs", "kind": "folder", "desc": "Dev-focused skill harness.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/aider", "kind": "folder", "desc": "Aider workspace agent.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/smol-agents", "kind": "folder", "desc": "Low-overhead script-fragment generator pods.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/nano-agents", "kind": "folder", "desc": "Nano agent building.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses/turbo-quant-swarms", "kind": "folder", "desc": "Quantized reasoning models for high-speed traffic.", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,5 @@
+{"path": "agents/frontier-callers/claude-caller", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/frontier-callers/glm-caller", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/frontier-callers/gemini-caller", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/frontier-callers/fable-caller", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/frontier-callers/opus-caller", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,7 @@
+{"path": "architectures/3-apk-native-topology", "kind": "folder", "desc": "Horizons + Aesc + Aeyre with WebSocket + UNIX socket bridges.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures/4-node-hardware-mesh", "kind": "folder", "desc": "Alpha/Beta/Gamma/Delta.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures/memory-pipeline", "kind": "folder", "desc": "OmniRoute -> Reasoning Bank -> OB1 -> mem0 (with KAG + RAG loops).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures/rlvr-flywheel", "kind": "folder", "desc": "Trajectory -> Red Audit -> GCP -> weights back to edge.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures/laptop-trick", "kind": "folder", "desc": "ADB loopback / debug-mode escape.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures/droiddesk-workstation", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures/modular-hot-swap", "kind": "folder", "desc": "NEW — swap agent harness without cascading changes (4 interfaces).", "tier": "02_wiki_md", "updated": "2026-09-06"}

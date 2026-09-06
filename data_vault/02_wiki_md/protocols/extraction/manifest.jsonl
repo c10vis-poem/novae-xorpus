@@ -1,0 +1,3 @@
+{"path": "protocols/extraction/omniroute-extraction", "kind": "folder", "desc": "OmniRoute AS the memory extraction layer.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/extraction/skill-tool-dual-extraction", "kind": "folder", "desc": "From docs -> Skills + Tools.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/extraction/voice-extraction", "kind": "folder", "desc": "STT extraction pipeline.", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,4 @@
+{"path": "vendors/anthropic/claude-code", "kind": "folder", "desc": "Claude Code CLI docs.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/anthropic/mcp", "kind": "folder", "desc": "Anthropic MCP registry, official server list.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/anthropic/plugin-marketplace", "kind": "folder", "desc": "Plugin repo.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/anthropic/api", "kind": "folder", "desc": "Messages API, tool use, prompt caching.", "tier": "02_wiki_md", "updated": "2026-09-06"}

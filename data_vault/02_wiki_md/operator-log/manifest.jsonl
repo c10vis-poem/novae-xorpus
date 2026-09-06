@@ -1,0 +1,5 @@
+{"path": "operator-log/user-corrections-log", "kind": "folder", "desc": "Verbatim annotations.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "operator-log/naming-canon-history", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "operator-log/priority-reorderings", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "operator-log/decisions-log", "kind": "folder", "desc": "Every hard/soft decision with date + rationale.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "operator-log/unresolved-questions", "kind": "folder", "desc": "Cross-vault open items.", "tier": "02_wiki_md", "updated": "2026-09-06"}

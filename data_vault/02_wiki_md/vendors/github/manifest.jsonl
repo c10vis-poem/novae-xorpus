@@ -1,0 +1,4 @@
+{"path": "vendors/github/owned", "kind": "folder", "desc": "c10vis-poem repos (novae-xorpus, aesop-xi, openwiki fork, claude-code-android, OB1, ECC-aesop).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/github/forked", "kind": "folder", "desc": "Everything forked from upstream.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/github/watched", "kind": "folder", "desc": "Upstream tracked (Anthropic MCP, Prime Agent, Graphify, obsidian-skills, mattpocock/skills).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/github/actions", "kind": "folder", "desc": "GitHub Actions workflows, CI/CD configs.", "tier": "02_wiki_md", "updated": "2026-09-06"}

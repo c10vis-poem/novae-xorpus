@@ -1,0 +1,5 @@
+{"path": "weights/voice/moonshine-small-onnx", "kind": "folder", "desc": "STT. NOTE: ~10s hard input ceiling, silent failure past 9.5s.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/voice/kokoro-82m", "kind": "folder", "desc": "TTS.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/voice/sherpa-onnx", "kind": "folder", "desc": "TTS alt.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/voice/silero-vad", "kind": "folder", "desc": "VAD (ONNX classifier, voice-stack).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/voice/parakeet", "kind": "folder", "desc": "NVIDIA STT alt.", "tier": "02_wiki_md", "updated": "2026-09-06"}

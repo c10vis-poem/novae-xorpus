@@ -1,0 +1,8 @@
+{"path": "vendors/google/platform", "kind": "folder", "desc": "GCP: GenAI Agent Platform, Cloud Shell, Developer Suite, Cloud Dashboard, Anti-Gravity, Gemini Spark.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/android", "kind": "folder", "desc": "NDK: ASharedMemory, SCM_RIGHTS, AndroidManifest process isolation, Foreground Service/LMK, Media SDK, Video Game SDK, Accessibility.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/models", "kind": "folder", "desc": "Gemma models — Gemma 4 12B (Node Beta), Gemma 4 E4B, PiperTTS-DE.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/gemini", "kind": "folder", "desc": "Gemini Nano (Chrome), Gemini Spark, Gemini API, AI Studio.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/notebooklm", "kind": "folder", "desc": "NotebookLM + notebooklm-py.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/jetpack-compose", "kind": "folder", "desc": "Native Android UI framework — candidate for Horizons UI rebuild.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/credits-and-accounts", "kind": "folder", "desc": "$1000 Vertex credits, Business account, AI Pro extended tier, Developer account, beta/demo access log.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/google/runbooks", "kind": "folder", "desc": "GCP cross-account handshake, IAM setup, service-account provisioning.", "tier": "02_wiki_md", "updated": "2026-09-06"}

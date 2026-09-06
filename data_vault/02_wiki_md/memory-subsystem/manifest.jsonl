@@ -1,0 +1,13 @@
+{"path": "memory-subsystem/omniroute", "kind": "folder", "desc": "AS MEMORY EXTRACTION LAYER (localhost:20128). Routing is a CONSEQUENCE of extraction, not the primary role.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/reasoning-bank", "kind": "folder", "desc": "Multi-model execution ledger + crash recovery.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/ob1", "kind": "folder", "desc": "Postgres vector protocol (Open Brain), ground-truth retrieval.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/mem0", "kind": "folder", "desc": "In-session episodic state + user habits.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/sqlite", "kind": "folder", "desc": "Embedded on-device KV + relational (sub-5ms).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/postgres", "kind": "folder", "desc": "Authoritative relational + vector on Node Beta.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/kv-cache", "kind": "folder", "desc": "KV cache spec vs SQL — KV = runtime attention tensors; SQL = persistent structured records.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/continual-harness", "kind": "folder", "desc": "Reset-free online adaptation.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/graphify", "kind": "folder", "desc": "AST + knowledge graph mapping.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/code-review-graph", "kind": "folder", "desc": "Cross-agent graph code checking.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/notebooklm-py", "kind": "folder", "desc": "Deep analytical query engine.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/honey-for-devs-mem", "kind": "folder", "desc": "Memory hooks Honey exposes.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem/nope-databank", "kind": "folder", "desc": "Red Auditor negative reference set — link only, lives outside visible tree.", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,12 @@
+{"path": "agents/oeracle", "kind": "folder", "desc": "Oeracle — on-device help-desk oracle (Qwen 9B on Hexagon).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/file-administrator", "kind": "folder", "desc": "NovusAexenti-Housekeeper (GLM-5.2 file admin).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/cross-auditor", "kind": "folder", "desc": "Home-node public auditor (script collector + log aggregator).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/red-auditor", "kind": "folder", "desc": "INCOGNITO — link only. Actual spec lives outside visible tree per isolation contract.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/early-trend-scraper", "kind": "folder", "desc": "Daily scraper against dev news + GitHub trends.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/home-assistant-auditor", "kind": "folder", "desc": "Home Assistant cross-agent auditor.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/it-helpdesk", "kind": "folder", "desc": "IT Help Desk & Manual Operator.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/web-ingestion-monitor", "kind": "folder", "desc": "Tracks upstream model/tool/repo changes.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/npu-inference-manager", "kind": "folder", "desc": "Balances weight offloading Alpha<->Beta<->Cloud.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/executor-0.8b", "kind": "folder", "desc": "0.8B executor persona (fast task exec).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/query-9b", "kind": "folder", "desc": "9B query persona (meta-prompt compilation, cloud tool calls).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents/frontier-callers", "kind": "folder", "desc": "Personas allowed to call frontier APIs — permission gated.", "tier": "02_wiki_md", "updated": "2026-09-06"}

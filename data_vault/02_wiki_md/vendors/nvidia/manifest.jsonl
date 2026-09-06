@@ -1,0 +1,3 @@
+{"path": "vendors/nvidia/jetson", "kind": "folder", "desc": "Orin Nano Super, CUDA cores, 60-70 TOPS.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/nvidia/cuda", "kind": "folder", "desc": "CUDA runtime + toolchain.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/nvidia/models", "kind": "folder", "desc": "Parakeet (STT), NVIDIA Polar.", "tier": "02_wiki_md", "updated": "2026-09-06"}

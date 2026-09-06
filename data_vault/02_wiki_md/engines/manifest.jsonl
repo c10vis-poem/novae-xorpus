@@ -1,0 +1,7 @@
+{"path": "engines/genie-x-engine", "kind": "folder", "desc": "Scheduler/serving surface over genie-x runtime.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines/moonshine-onnx-engine", "kind": "folder", "desc": "STT engine.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines/kokoro-tts-engine", "kind": "folder", "desc": "TTS engine.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines/piper-tts-engine", "kind": "folder", "desc": "Alt TTS engine.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines/silero-vad-engine", "kind": "folder", "desc": "VAD engine.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines/llama-server", "kind": "folder", "desc": "llama.cpp HTTP server wrapper.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines/openwiki-tui-engine", "kind": "folder", "desc": "OpenWiki TUI (multi-profile: file_administrator, oeracle_helpdesk).", "tier": "02_wiki_md", "updated": "2026-09-06"}

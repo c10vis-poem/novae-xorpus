@@ -1,0 +1,5 @@
+{"path": "weights/active", "kind": "folder", "desc": "Currently loaded/loadable on-device.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/candidates", "kind": "folder", "desc": "To evaluate, not yet chosen.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/rejected", "kind": "folder", "desc": "Evaluated and dropped, with reason.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/voice", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/vision", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}

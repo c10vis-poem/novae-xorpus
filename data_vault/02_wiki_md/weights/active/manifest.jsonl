@@ -1,0 +1,3 @@
+{"path": "weights/active/qwen-3.5-0.8b-qai-hub-genie", "kind": "folder", "desc": "Executor — NPU-pinned via QAIRT.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/active/qwen-3.5-9b-unsloth-gguf-q4_0", "kind": "folder", "desc": "Query — NPU via GenieX.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/active/qwen-3.5-2b-q4_0-gguf", "kind": "folder", "desc": "ALREADY ON DISK per Lex-Novi discovery (1.21 GB).", "tier": "02_wiki_md", "updated": "2026-09-06"}

@@ -1,0 +1,6 @@
+{"path": "weights/candidates/gemma-4-12b-it-qat-ud-q4_k_xl", "kind": "folder", "desc": "12B for Node Beta (Jetson, 8GB tight) — operator plan.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/candidates/gemma-4-e4b-qai-hub", "kind": "folder", "desc": "E4B (Qualcomm-hosted).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/candidates/phi-4-mini-qai-hub", "kind": "folder", "desc": "Help-desk agent tier.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/candidates/granite-mini", "kind": "folder", "desc": "Help-desk agent tier.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/candidates/qwen-3.5-4b", "kind": "folder", "desc": "Fallback tier if 9B chokes.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights/candidates/twin-9b", "kind": "folder", "desc": "VERIFY SPELLING — may be mishear.", "tier": "02_wiki_md", "updated": "2026-09-06"}

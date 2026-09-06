@@ -1,0 +1,5 @@
+{"path": "vendors/qualcomm/qairt-sdk", "kind": "folder", "desc": "QAIRT SDK docs, headers, HTP specs.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/qualcomm/genie-bundles", "kind": "folder", "desc": "Pre-compiled Genie bundles from QAI Hub.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/qualcomm/hexagon", "kind": "folder", "desc": "NPU v79/v73, INT8 TOPS, FastRPC, DMA-BUF.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/qualcomm/qat", "kind": "folder", "desc": "Quantization Aware Training — used with GenieX.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/qualcomm/models", "kind": "folder", "desc": "Qualcomm-hosted models (Qwen3.5-0.8B QAI, LiteHRNet, Phi-4-Mini).", "tier": "02_wiki_md", "updated": "2026-09-06"}

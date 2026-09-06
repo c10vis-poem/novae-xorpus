@@ -1,0 +1,15 @@
+{"path": "protocols/aesop-xi", "kind": "folder", "desc": "THE ethical arbitration protocol (Agentic Execution Split Ops).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/mcp", "kind": "folder", "desc": "Model Context Protocol spec.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/manifest-jsonl-schema", "kind": "folder", "desc": "Universal JSONL marker schema.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/skill-onboarding-schema", "kind": "folder", "desc": "AESOP_XI_Skill_Onboarding_Template JSON schema.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/w5h-matrix", "kind": "folder", "desc": "Who/What/When/Where/Why/How operational lens.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/rlvr", "kind": "folder", "desc": "Reinforcement Learning with Verifiable Rewards.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/kag-recurse", "kind": "folder", "desc": "Knowledge-Augmented-Generation recursive loop spec.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/rag-pipeline", "kind": "folder", "desc": "Retrieval-Augmented-Generation pipeline.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/adb-loopback", "kind": "folder", "desc": "The laptop trick — ADB-to-WebSocket / UNIX-host tunnel.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/unix-socket-ipc", "kind": "folder", "desc": "AF_UNIX + SCM_RIGHTS FD-passing between daemons.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/extraction", "kind": "folder", "desc": "DATA EXTRACTION protocols.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/memory-pipeline-order", "kind": "folder", "desc": "OmniRoute -> Reasoning Bank -> OB1 -> mem0 -> daemons/models.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/droiddesk-workstation", "kind": "folder", "desc": "DroidDesk workstation protocol.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/incognito-red-audit", "kind": "folder", "desc": "7-invariant isolation contract.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols/cost-checking", "kind": "folder", "desc": "Cost audit protocol.", "tier": "02_wiki_md", "updated": "2026-09-06"}

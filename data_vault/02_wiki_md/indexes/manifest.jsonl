@@ -1,0 +1,11 @@
+{"path": "indexes/by-doc-type", "kind": "folder", "desc": "5 doc types: Tool / Skill / Reference / Memory / Data.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-vendor", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-agent", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-harness", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-model", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-node", "kind": "folder", "desc": "Everything on Alpha vs Beta vs Gamma vs Delta.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-tier", "kind": "folder", "desc": "cross-tier lookups (raw -> wiki -> skill -> log).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/by-project", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/new-since-7d", "kind": "folder", "desc": "rolling 7-day index.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/new-since-24h", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes/open-questions", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}

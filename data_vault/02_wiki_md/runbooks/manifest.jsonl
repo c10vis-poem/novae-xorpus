@@ -1,0 +1,9 @@
+{"path": "runbooks/glm-openwiki-setup", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/droiddesk-install", "kind": "folder", "desc": "TONIGHT target #1.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/aesc-daemon-bootstrap", "kind": "folder", "desc": "TONIGHT target #2.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/horizons-salvage-plan", "kind": "folder", "desc": "Salvage philosophy applied — 5 targets only.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/gcp-cross-account-handshake", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/qairt-npu-proof-of-life", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/geniex-9b-npu-test", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/car-wash-integration-test", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks/reboot-boot-sequence", "kind": "folder", "desc": "boot.sh -> tmux llm -> ow flow.", "tier": "02_wiki_md", "updated": "2026-09-06"}

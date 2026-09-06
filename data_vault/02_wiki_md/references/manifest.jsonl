@@ -1,0 +1,10 @@
+{"path": "references/continual-harness-paper", "kind": "folder", "desc": "arXiv 2605.09998v1.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/together-oscar", "kind": "folder", "desc": "2-bit attention-aware KV cache.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/nvidia-polar", "kind": "folder", "desc": "GRPO training.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/stanford-ai-index", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/liquid-ai-lfm25", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/memo-memory-model", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/hexo-labs-sia", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/omnivoice-studio", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/futo-keyboard", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references/llm-wiki-pattern", "kind": "folder", "desc": "Karpathy pattern.", "tier": "02_wiki_md", "updated": "2026-09-06"}

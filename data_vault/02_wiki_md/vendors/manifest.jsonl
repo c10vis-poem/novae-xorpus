@@ -1,0 +1,16 @@
+{"path": "vendors/google", "kind": "folder", "desc": "MAJOR cut per operator directive.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/qualcomm", "kind": "folder", "desc": "MAJOR. Reference implementation for vendor-workspace derive-from-function design.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/nvidia", "kind": "folder", "desc": "MAJOR.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/github", "kind": "folder", "desc": "MAJOR — operator has forks + custom repos.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/anthropic", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/primeintellect", "kind": "folder", "desc": "", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/deepseek", "kind": "folder", "desc": "NEW — coming harness per operator.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/unsloth", "kind": "folder", "desc": "Fine-tuning docs, GGUF export, quantization guides.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/liquid-ai", "kind": "folder", "desc": "LFM2.5-8B-A1B reference.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/together", "kind": "folder", "desc": "OSCAR (2-bit attention-aware KV cache) research.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/mattpocock", "kind": "folder", "desc": "mattpocock/skills (grill-with-docs, etc).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/kepano", "kind": "folder", "desc": "obsidian-skills.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/affaan-m", "kind": "folder", "desc": "ECC (Everything Claude Code).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/graphify-labs", "kind": "folder", "desc": "Graphify (AST -> knowledge graph).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/openrouter", "kind": "folder", "desc": "OpenRouter API, GLM 5.2 access, model catalog.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "vendors/z-ai", "kind": "folder", "desc": "GLM 5.2 model docs, pricing, 1M context notes.", "tier": "02_wiki_md", "updated": "2026-09-06"}

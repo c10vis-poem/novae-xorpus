@@ -1,0 +1,18 @@
+{"path": "vendors", "kind": "folder", "desc": "BY-VENDOR — first-class. Each vendor gets a full sub-tree.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "weights", "kind": "folder", "desc": "BY-MODEL — every weight file catalogued. manifest: repo id, quantization, size, on-disk-path, target-hardware.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes", "kind": "folder", "desc": "BY-RUNTIME — low-level executors. A runtime EXECUTES code.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "engines", "kind": "folder", "desc": "BY-ENGINE — wrappers around runtime + model + scheduler.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "harnesses", "kind": "folder", "desc": "BY-HARNESS — outer control loops. See modular hot-swap spec (4 interfaces).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "agents", "kind": "folder", "desc": "BY-AGENT — personas under harnesses. manifest: harness, model, memory-scope, tool-allowance, on-node.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "protocols", "kind": "folder", "desc": "BY-PROTOCOL — specs, not code.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "scripts", "kind": "folder", "desc": "BY-EXECUTABLE — docs for actual scripts (mirrors 04_skills_runtime/extracted_tools/).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "tools", "kind": "folder", "desc": "BY-CAPABILITY — one .md per tool available to any agent. Mirrors extracted_tools/.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "skills", "kind": "folder", "desc": "BY-SKILL — one .md per SKILL.md. Mirrors prompt_skills/.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "projects", "kind": "folder", "desc": "BY-PROJECT — per-repo subvaults.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "entities", "kind": "folder", "desc": "BY-STRUCTURAL-ENTITY — registries, schemas, hardware profiles.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "architectures", "kind": "folder", "desc": "BY-BLUEPRINT — diagrams, data flows, integration maps.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "memory-subsystem", "kind": "folder", "desc": "BY-MEMORY-COMPONENT — first-class top-level cut.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runbooks", "kind": "folder", "desc": "BY-OPERATIONAL-PROCEDURE — step-by-step.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "references", "kind": "folder", "desc": "BY-EXTERNAL-SOURCE — vendor docs + papers as Tier-2 notes.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "operator-log", "kind": "folder", "desc": "BY-SPEAKER-ATTRIBUTION (hard rule 4). Operator words are content, never paraphrased.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "indexes", "kind": "folder", "desc": "BY-CROSS-CUTTING-VIEW — MOCs re-slicing everything.", "tier": "02_wiki_md", "updated": "2026-09-06"}

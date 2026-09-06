@@ -1,0 +1,7 @@
+{"path": "runtimes/qairt", "kind": "folder", "desc": "libQnnHtp.so + env vars + genie-t2t-run CLI.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes/genie-x", "kind": "folder", "desc": "Wraps llama.cpp + GGML Hexagon backend + CLI.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes/llama-cpp", "kind": "folder", "desc": "Base llama.cpp + GGML Hexagon backend + haozixu/llama.cpp-npu fork.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes/onnx-runtime", "kind": "folder", "desc": "ORT + QNN Execution Provider for NPU.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes/whisper-cpp", "kind": "folder", "desc": "Voice STT runtime.", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes/cuda", "kind": "folder", "desc": "CUDA on Jetson (Node Beta).", "tier": "02_wiki_md", "updated": "2026-09-06"}
+{"path": "runtimes/node-js", "kind": "folder", "desc": "Node.js LTS for MCP servers + OpenWiki + web tooling.", "tier": "02_wiki_md", "updated": "2026-09-06"}
