@@ -10,7 +10,7 @@ that becomes a URL, repo, package or path uses the lowercase flattened form
 |---|---|---|---|
 | **NovÆxorpus** | `novae-xorpus` | EXISTS | The vault / universal Data Bank. `data_vault/` 5+1 tiers, the master wiki, canon. This repo. |
 | **Æsop-Xi** | `aesop-xi` | EXISTS | Memory layer, context formatting, tool/context orchestration, ethical ops + agent protocols. |
-| **NovÆxenti** | `novaexenti` | **CREATE** | Agent logic. Personas, harness configs, agent manifests. |
+| **NovÆxenti** | `novus-aexenti` | **CREATE** | Agent logic. Personas, harness configs, agent manifests. |
 | **NovÆxopia** | `novaexopia` | **CREATE** | Agent tools, harness, engine — the "claw". Runtimes, engines, weight configs. |
 | **Æsc** | `aesc` | **CREATE** | Terminal daemon APK. Tonight's target #2. |
 | **Æyre** | `aeyre` | **CREATE** | Voice/vision daemon APK. STT, TTS, VAD. |
@@ -33,7 +33,7 @@ Five project repos + vendor cuts + shared infrastructure:
 
 ```
 aesop-xi/                  protocols, memory layer, orchestration
-novaexenti/                agent logic
+novus-aexenti/             agent logic
 novaexopia/                tools, harness, engine
 skills-and-capabilities/   shared skill + tool registry
 data_vault/                the corpus (inside novae-xorpus)

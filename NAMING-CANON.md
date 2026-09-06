@@ -22,7 +22,7 @@ single-letter form** — `Æ` becomes `ae`.
 | Canon | URL / repo |
 |---|---|
 | NovÆxorpus | `novae-xorpus` |
-| NovÆxenti | `novaexenti` |
+| NovÆxenti | `novus-aexenti` |
 | NovÆxopia | `novaexopia` |
 | Æsop-Xi | `aesop-xi` |
 | Horizons-Ui | `horizons-ui` |
@@ -31,16 +31,22 @@ single-letter form** — `Æ` becomes `ae`.
 
 Display names keep the ligature. Only the machine-readable form flattens it.
 
-## Why `x`, and why the one hyphen
+## Why `x`, and why the hyphens
 
 Operator-stated, 2026-08-26. In the ligature form the **`x` carries the hard `k`
 sound** — `NovÆxorpus`, `NovÆxopia` — and it stays findable there. Flattened to
 two separated words the `c` reads as a `z` instead, which is what the `x` fixes.
 
-The vault repo **keeps its hyphen**: `novae-xorpus`. This is deliberate and is
-not an inconsistency to be tidied away. The others run together —
-`novaexenti`, `novaexopia` — and `aesop-xi` keeps the hyphen its display name
-already has.
+Hyphenation is **per-name, not a global rule**. Do not "tidy" any of these into
+consistency — each is deliberate:
+
+| Repo | Hyphen? | Why |
+|---|---|---|
+| `novae-xorpus` | yes | The vault repo keeps its hyphen. |
+| `novus-aexenti` | yes | Operator-corrected 2026-09-06. Takes the `novus-` prefix, not `nova`/`novae`. |
+| `novaexopia` | no | Runs together. |
+| `aesop-xi` | yes | Keeps the hyphen its display name already has. |
+| `aesc`, `aeyre` | n/a | Single words. |
 
 ## Superseded spellings
 
@@ -50,7 +56,7 @@ in a source; do not use them going forward.
 | Found as | Canon |
 |---|---|
 | `NovA-Corpus`, `Nova Corpus`, `NÆX`, `NovÆcorpus` | **NovÆxorpus** |
-| `NovÆgenti`, `Novus Agenti`, `NovusÆxenti`, `Novæ-Corpus` | **NovÆxenti** |
+| `NovÆgenti`, `Novus Agenti`, `NovusÆxenti`, `Novæ-Corpus`, `novaexenti` | **NovÆxenti** (repo: `novus-aexenti`) |
 | `NovÆcopia Vincet`, `Omni Claw`, `OMNI.CLAW`, `NovÆcopia` | **NovÆxopia** |
 | `AESOP XI`, `AESOP_XI`, `aesop`, `Agentic Executions Split Operations Protocol` | **Æsop-Xi** |
 | `Horizons UI`, `horizons-ui`, `com.horizons.ui` | **Horizons-Ui** |
