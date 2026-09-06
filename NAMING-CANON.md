@@ -22,12 +22,12 @@ single-letter form** — `Æ` becomes `ae`.
 | Canon | URL / repo |
 |---|---|
 | NovÆxorpus | `novae-xorpus` |
-| NovÆxenti | `novus-aexenti` |
+| NovÆxenti | `novae-aexenti` |
 | NovÆxopia | `novaexopia` |
 | Æsop-Xi | `aesop-xi` |
 | Horizons-Ui | `horizons-ui` |
-| Æsc | `novus-aesc` |
-| Æyre | `novus-aeyre` |
+| Æsc | `novae-aesc` |
+| Æyre | `novae-aeyre` |
 
 Display names keep the ligature. Only the machine-readable form flattens it.
 
@@ -43,11 +43,11 @@ consistency — each is deliberate:
 | Repo | Hyphen? | Why |
 |---|---|---|
 | `novae-xorpus` | yes | The vault repo keeps its hyphen. |
-| `novus-aexenti` | yes | Operator-corrected 2026-09-06. Takes the `novus-` prefix, not `nova`/`novae`. |
+| `novae-aexenti` | yes | `novae-` prefix. Operator-stated 2026-09-06. |
 | `novaexopia` | no | Runs together. |
 | `aesop-xi` | yes | Keeps the hyphen its display name already has. |
-| `novus-aesc` | yes | `novus-` prefix, confirmed at creation 2026-09-06. |
-| `novus-aeyre` | yes | `novus-` prefix, confirmed at creation 2026-09-06. |
+| `novae-aesc` | yes | `novae-` prefix. |
+| `novae-aeyre` | yes | `novae-` prefix. |
 
 ## Superseded spellings
 
@@ -57,12 +57,12 @@ in a source; do not use them going forward.
 | Found as | Canon |
 |---|---|
 | `NovA-Corpus`, `Nova Corpus`, `NÆX`, `NovÆcorpus` | **NovÆxorpus** |
-| `NovÆgenti`, `Novus Agenti`, `NovusÆxenti`, `Novæ-Corpus`, `novaexenti` | **NovÆxenti** (repo: `novus-aexenti`) |
+| `NovÆgenti`, `Novus Agenti`, `NovusÆxenti`, `Novæ-Corpus`, `novaexenti`, `novus-aexenti` | **NovÆxenti** (repo: `novae-aexenti`) |
 | `NovÆcopia Vincet`, `Omni Claw`, `OMNI.CLAW`, `NovÆcopia` | **NovÆxopia** |
 | `AESOP XI`, `AESOP_XI`, `aesop`, `Agentic Executions Split Operations Protocol` | **Æsop-Xi** |
 | `Horizons UI`, `horizons-ui`, `com.horizons.ui` | **Horizons-Ui** |
-| `Æsh`, `daemon.aexenti`, `aesc` | **Æsc** (repo: `novus-aesc`) |
-| `Æyræ`, `daemon.vocal`, `aeyre` | **Æyre** (repo: `novus-aeyre`) |
+| `Æsh`, `daemon.aexenti`, `aesc`, `novus-aesc` | **Æsc** (repo: `novae-aesc`) |
+| `Æyræ`, `daemon.vocal`, `aeyre`, `novus-aeyre` | **Æyre** (repo: `novae-aeyre`) |
 
 ## The daemon names are settled
 
@@ -77,3 +77,17 @@ The three components run **independently**. Horizons-Ui is the most independent
 of them, not the least — it has its own browser, file pickers, chat interface
 and model loading, and does not require either daemon to function. Any document
 claiming the UI "cannot function without" the daemons is superseded by this.
+
+## Prefix: `novae-`, not `novus-`
+
+Operator-stated 2026-09-06. The family prefix is **`novae-`** — matching
+`novae-xorpus`. `novus-` is not canon and never was.
+
+**Open mismatch:** three repos were created as `novus-aexenti`, `novus-aesc` and
+`novus-aeyre` before this was stated. They need renaming to `novae-*` (owner
+action — GitHub preserves history and sets up redirects). Until then the repo
+names on GitHub do not match this canon, and **this canon is the authority, not
+the repo names.**
+
+`novaexopia` is correct as-is — it runs together with no prefix and keeps its
+`x`. See decision #7 and the `x` rationale above.

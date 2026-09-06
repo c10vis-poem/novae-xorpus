@@ -10,10 +10,10 @@ that becomes a URL, repo, package or path uses the lowercase flattened form
 |---|---|---|---|
 | **NovÆxorpus** | `novae-xorpus` | EXISTS | The vault / universal Data Bank. `data_vault/` 5+1 tiers, the master wiki, canon. This repo. |
 | **Æsop-Xi** | `aesop-xi` | EXISTS | Memory layer, context formatting, tool/context orchestration, ethical ops + agent protocols. |
-| **NovÆxenti** | `novus-aexenti` | EXISTS ✅ | Agent logic. Personas, harness configs, agent manifests. |
+| **NovÆxenti** | `novae-aexenti` | ⚠ created as `novus-aexenti` — needs rename | Agent logic. Personas, harness configs, agent manifests. |
 | **NovÆxopia** | `novaexopia` | EXISTS ✅ | Agent tools, harness, engine — the "claw". Runtimes, engines, weight configs. |
-| **Æsc** | `novus-aesc` | EXISTS ✅ | Terminal daemon APK. Build order target #2. |
-| **Æyre** | `novus-aeyre` | EXISTS ✅ | Android media daemon — voice AND vision. STT, TTS, VAD, camera. |
+| **Æsc** | `novae-aesc` | ⚠ created as `novus-aesc` — needs rename | Terminal daemon APK. Build order target #2. |
+| **Æyre** | `novae-aeyre` | ⚠ created as `novus-aeyre` — needs rename | Android media daemon — voice AND vision. STT, TTS, VAD, camera. |
 | — | `skills-and-capabilities` | **CREATE** | **The skills/tools EXTRACTION LAYER** — the machinery that turns docs into skills and tools. The skills themselves live in the corpus (`novae-xorpus`), not here. |
 | **Horizons-Ui** | `horizons-ui` | EXISTS | The UI. Salvage source — see salvage philosophy below. |
 | — | `openwiki` | EXISTS (fork) | `c10vis-poem/openwiki`, upstream `langchain-ai/openwiki`. Has real NPU/voice commits. |
@@ -34,7 +34,7 @@ Five project repos + vendor cuts + shared infrastructure:
 
 ```
 aesop-xi/                  protocols, memory layer, orchestration
-novus-aexenti/             agent logic
+novae-aexenti/             agent logic
 novaexopia/                tools, harness, engine
 skills-and-capabilities/   skills/tools EXTRACTION LAYER (skills live in the corpus)
 data_vault/                the corpus (inside novae-xorpus)
