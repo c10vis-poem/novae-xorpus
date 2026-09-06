@@ -11,8 +11,8 @@ and this file is the resolution.
 | **NovÆxopia** | Agent tools, harness, engine — the "claw" aspect |
 | **Æsop-Xi** | Memory layer, context formatting, tool and context orchestration, and protocols — ethical operations and agent protocols |
 | **Horizons-Ui** | The UI |
-| **Æsc** | Terminal daemon |
-| **Æyre** | Voice layer / vision — STT and TTS |
+| **Æsc** | Terminal daemon — the terminal APK |
+| **Æyre** | Android media daemon — voice and vision layer (STT, TTS, VAD, camera) |
 
 ## URL and repo names
 
@@ -26,8 +26,8 @@ single-letter form** — `Æ` becomes `ae`.
 | NovÆxopia | `novaexopia` |
 | Æsop-Xi | `aesop-xi` |
 | Horizons-Ui | `horizons-ui` |
-| Æsc | `aesc` |
-| Æyre | `aeyre` |
+| Æsc | `novus-aesc` |
+| Æyre | `novus-aeyre` |
 
 Display names keep the ligature. Only the machine-readable form flattens it.
 
@@ -46,7 +46,8 @@ consistency — each is deliberate:
 | `novus-aexenti` | yes | Operator-corrected 2026-09-06. Takes the `novus-` prefix, not `nova`/`novae`. |
 | `novaexopia` | no | Runs together. |
 | `aesop-xi` | yes | Keeps the hyphen its display name already has. |
-| `aesc`, `aeyre` | n/a | Single words. |
+| `novus-aesc` | yes | `novus-` prefix, confirmed at creation 2026-09-06. |
+| `novus-aeyre` | yes | `novus-` prefix, confirmed at creation 2026-09-06. |
 
 ## Superseded spellings
 
@@ -60,8 +61,8 @@ in a source; do not use them going forward.
 | `NovÆcopia Vincet`, `Omni Claw`, `OMNI.CLAW`, `NovÆcopia` | **NovÆxopia** |
 | `AESOP XI`, `AESOP_XI`, `aesop`, `Agentic Executions Split Operations Protocol` | **Æsop-Xi** |
 | `Horizons UI`, `horizons-ui`, `com.horizons.ui` | **Horizons-Ui** |
-| `Æsh`, `daemon.aexenti` | **Æsc** |
-| `Æyræ`, `daemon.vocal` | **Æyre** |
+| `Æsh`, `daemon.aexenti`, `aesc` | **Æsc** (repo: `novus-aesc`) |
+| `Æyræ`, `daemon.vocal`, `aeyre` | **Æyre** (repo: `novus-aeyre`) |
 
 ## The daemon names are settled
 

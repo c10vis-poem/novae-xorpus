@@ -10,16 +10,17 @@ that becomes a URL, repo, package or path uses the lowercase flattened form
 |---|---|---|---|
 | **NovÆxorpus** | `novae-xorpus` | EXISTS | The vault / universal Data Bank. `data_vault/` 5+1 tiers, the master wiki, canon. This repo. |
 | **Æsop-Xi** | `aesop-xi` | EXISTS | Memory layer, context formatting, tool/context orchestration, ethical ops + agent protocols. |
-| **NovÆxenti** | `novus-aexenti` | **CREATE** | Agent logic. Personas, harness configs, agent manifests. |
-| **NovÆxopia** | `novaexopia` | **CREATE** | Agent tools, harness, engine — the "claw". Runtimes, engines, weight configs. |
-| **Æsc** | `aesc` | **CREATE** | Terminal daemon APK. Tonight's target #2. |
-| **Æyre** | `aeyre` | **CREATE** | Voice/vision daemon APK. STT, TTS, VAD. |
-| — | `skills-and-capabilities` | **CREATE** | Shared skill + tool registry across all repos and harnesses. |
+| **NovÆxenti** | `novus-aexenti` | EXISTS ✅ | Agent logic. Personas, harness configs, agent manifests. |
+| **NovÆxopia** | `novaexopia` | EXISTS ✅ | Agent tools, harness, engine — the "claw". Runtimes, engines, weight configs. |
+| **Æsc** | `novus-aesc` | EXISTS ✅ | Terminal daemon APK. Build order target #2. |
+| **Æyre** | `novus-aeyre` | EXISTS ✅ | Android media daemon — voice AND vision. STT, TTS, VAD, camera. |
+| — | `skills-and-capabilities` | **CREATE** | **The skills/tools EXTRACTION LAYER** — the machinery that turns docs into skills and tools. The skills themselves live in the corpus (`novae-xorpus`), not here. |
 | **Horizons-Ui** | `horizons-ui` | EXISTS | The UI. Salvage source — see salvage philosophy below. |
 | — | `openwiki` | EXISTS (fork) | `c10vis-poem/openwiki`, upstream `langchain-ai/openwiki`. Has real NPU/voice commits. |
 | — | `OB1` | EXISTS | Postgres vector protocol (Open Brain). |
 | — | `ECC-aesop` | EXISTS | Everything Claude Code plugin. |
 | — | `claude-code-android` | EXISTS | Android Claude Code work. |
+| — | `raw-database` | EXISTS | **Salvage yard / workbench.** Dump space. NOT a vault tier — no provenance guarantees, nothing here is canonical. Do not confuse with `data_vault/01_raw_sources/`. |
 
 **Structural note:** the three runtime components (Horizons-Ui, Æsc, Æyre) run
 **independently**. Horizons-Ui is the *most* independent of them, not the least —
@@ -35,7 +36,7 @@ Five project repos + vendor cuts + shared infrastructure:
 aesop-xi/                  protocols, memory layer, orchestration
 novus-aexenti/             agent logic
 novaexopia/                tools, harness, engine
-skills-and-capabilities/   shared skill + tool registry
+skills-and-capabilities/   skills/tools EXTRACTION LAYER (skills live in the corpus)
 data_vault/                the corpus (inside novae-xorpus)
 google/                    vendor — platform, android, models, gemini, credits
 qualcomm/                  vendor — qairt, hexagon, qat, genie bundles  [REFERENCE SHAPE]
