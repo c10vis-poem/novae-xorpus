@@ -24,7 +24,12 @@ spellings — never rewrite a source to match the canon.
 ## Hard rules
 
 1. Verbatim. Content survives, furniture goes.
-2. Nothing merged. Same file count out as in.
+2. ~~Nothing merged. Same file count out as in.~~ **RETIRED 2026-09-06.** It was
+   a rule for the one-time `01-sources/` → `02-clean/` extraction pass, and it
+   does not describe the vault. Tier 2 (`02_wiki_md/`) is a **living wiki** —
+   atomic concept notes whose frontmatter carries a `sources:` **list**, because
+   one note synthesizes many documents. Merging is the point, not the violation.
+   Number left in place so existing citations of rules 3-7 stay valid.
 3. Nothing interpreted.
 4. Speaker attribution is content.
 5. Nothing self-certifies.
