@@ -109,21 +109,6 @@ One `.md` per source, mirroring the source tree.
 Long documents also get an inline `.jsonl`, one record per section, so a tool
 can query without loading the whole file. Short ones don't need it.
 
-```yaml
----
-source: 01-sources/pdf/novaegenti-defined-pt1.pdf
-origin: drive://<file_id>
-doc_date: 2026-08-13          # the document's own date, from inside it
-file_modified: 2026-08-14
-cleaned: 2026-08-24
----
-```
-
-The dates are there because the grill session decides stale versus garbage
-versus keeper and can't without them. Later is a reasonable tiebreak between two
-documents on the same subject — a prior, not a ranking. Contradictions between
-sources are left exactly as they are.
-
 ## The check — RLVR
 
 The operator orchestrates it. A different tool reads the original and the
