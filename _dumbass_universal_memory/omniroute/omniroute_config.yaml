@@ -1,0 +1,23 @@
+# OmniRoute gateway config — localhost:20128
+# Dual role per 02_DUMBASS_UNIVERSAL_MEMORY_SPEC.md §2 and its own "Note" block:
+# (1) data/inference routing across the hardware mesh, (2) async memory extraction tap.
+# UNRESOLVED: the operator's original directive says OmniRoute IS a memory extraction
+# layer; a separate spec draft calls it "an Inference/Token Gateway... not a memory
+# extraction layer." This config keeps both roles per the dual-role description already
+# written into _dumbass_universal_memory/README.md — flagged, not resolved here.
+
+listen: 127.0.0.1:20128
+route_order:
+  - hexagon_npu      # Node Alpha, local
+  - jetson_orin       # Node Beta, network
+  - cloud_frontier    # fallback, highest cost
+
+token_compression:
+  method: rtk
+  savings_target_pct: [15, 95]
+
+memory_tap:
+  enabled: true
+  targets: [reasoning_bank, mem0]
+  captures: [tool_invocation, reasoning_step, failure_trajectory]
+  adds_latency: false

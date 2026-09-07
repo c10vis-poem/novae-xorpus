@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "reasoning_bank failure log record",
+  "type": "object",
+  "required": ["task_id", "step", "error_type", "quarantine_status"],
+  "properties": {
+    "task_id": { "type": "string" },
+    "step": { "type": "integer" },
+    "error_type": { "type": "string" },
+    "quarantine_status": { "type": "string", "enum": ["pending", "quarantined", "cleared"] },
+    "reward_score": { "type": "number" },
+    "recurrence_of": { "type": ["string", "null"] }
+  }
+}

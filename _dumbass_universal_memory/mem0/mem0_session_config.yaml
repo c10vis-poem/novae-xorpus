@@ -1,0 +1,13 @@
+# mem0 episodic tracking config — Node Alpha (mobile RAM)
+# Role: in-session episodic state & user habits (02_DUMBASS_UNIVERSAL_MEMORY_SPEC.md §2)
+# "Remembers what you said 2 minutes ago and how you like your answers structured" —
+# short-term personalization so the model doesn't re-ask the same questions.
+
+host: node_alpha
+storage: memory        # RAM-resident, not persisted across reboots by design
+sync:
+  target: omniroute     # async memory tap, see omniroute_config.yaml
+  on: [tool_call, completion]
+decay:
+  session_context_ttl_s: 1800
+  syntax_habits_ttl_s: 0   # persistent within device lifetime, see rolling_habits_schema.json

@@ -1,0 +1,9 @@
+{
+  "policy": "omniroute_memory_decay",
+  "classes": {
+    "session_context": { "ttl_s": 1800, "destination": "mem0" },
+    "syntax_habits": { "ttl_s": 0, "destination": "mem0", "note": "persistent within device lifetime" },
+    "spec_markers": { "ttl_s": 0, "destination": "ob1_protocol", "note": "durable, PostgreSQL-backed" },
+    "error_traces": { "ttl_s": 0, "destination": "reasoning_bank", "note": "append-only, never expires" }
+  }
+}
