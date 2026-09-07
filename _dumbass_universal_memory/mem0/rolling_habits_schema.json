@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "mem0 rolling habits record",
+  "type": "object",
+  "required": ["habit_id", "kind", "value", "last_reinforced"],
+  "properties": {
+    "habit_id": { "type": "string" },
+    "kind": { "type": "string", "enum": ["syntax_preference", "operational_constraint", "recurring_correction"] },
+    "value": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "last_reinforced": { "type": "string", "format": "date-time" }
+  }
+}
