@@ -1,1 +1,0 @@
-# NovÆxorpus Glossary

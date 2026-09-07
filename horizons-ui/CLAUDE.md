@@ -1,1 +1,0 @@
-# horizons-ui — corpus domain

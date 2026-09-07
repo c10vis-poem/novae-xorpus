@@ -1,1 +1,0 @@
-# NovÆxorpus Stack Map
